@@ -4,66 +4,66 @@ const Team = () => {
   const teamMembers = [
     {
       name: "Tony Chen",
-      position: "Founder & CEO",
-      image: "/images/tony.webp",
+      position: "CEO & Founder",
+      image: "/images/team/tony-chen.png",
       description:
-        "Praktisi bisnis dengan pengalaman 15+ tahun dalam leadership dan business development. Ahli dalam transformasi organisasi dan pengembangan SDM.",
+        "CEO & Founder Right n Big Coaching & Consultant. Sales Lead Consultant & Senior Trainer QQ Group. Master Trainer – Business Coach & Consultant. Master in Global Business: Operations Management. Sales & Communication Specialist. UMKM Expert.",
     },
     {
-      name: "Julian Foe",
-      position: "Senior Business Coach",
-      image: "/placeholder.svg?height=300&width=300&text=Julian+Foe",
+      name: "Julian Foe, M.Pd",
+      position: "Senior Director & Leadership Expert",
+      image: "/images/team/julian-foe.png",
       description:
-        "Expert dalam strategic planning dan organizational development dengan track record membantu 200+ perusahaan.",
+        "Former Senior Director – Asia Pacific Retail Institute. Country Director – Global Leadership Summit – Indonesia. Founding Member – Master's Hand Foundation. HR Advisor – various national & multinational company. National & International Speaker: Leadership Topic. Master in Education: Educational Technology. Senior Consultant, Trainer.",
     },
     {
-      name: "Fransisca Diwanti",
-      position: "Leadership Trainer",
-      image: "/placeholder.svg?height=300&width=300&text=Fransisca+Diwanti",
+      name: "Fransisca Diwanti, SH., MM., CCP.",
+      position: "Commissioner & Education Leader",
+      image: "/images/team/fransisca-diwanti.png",
       description:
-        "Spesialis dalam leadership development dan team building dengan sertifikasi internasional.",
+        "Komisaris – PT Theralife Esensia Indonesia. Wakil Rektor III – Universitas Mahakarya Asia. Dosen – STIEBBANK Yogyakarta. Wakil Ketua II – STIEBBANK Yogyakarta. Direktur – Akademi Pariwisata Buana Wisata Yogyakarta. Ketua Dewan Pembina – Asosiasi Manjemen Indonesia BPC DIY. Pengurus – KADIN DIY Bidang Humas. Owner – De Kayon Rasa Resto. President – Lions Club Yogyakarta.",
     },
     {
-      name: "Yayuk Sulistyowati",
-      position: "HR Development Specialist",
-      image: "/placeholder.svg?height=300&width=300&text=Yayuk+Sulistyowati",
+      name: "Dr. Helena Rahayu (Yayuk)",
+      position: "Medical Doctor & Sales Marketing Expert",
+      image: "/images/team/helena-rahayu.png",
       description:
-        "Ahli dalam pengembangan SDM dan talent management dengan pengalaman 12+ tahun di berbagai industri.",
+        "Medical Doctor. More than 30 years experienced as Sales Marketing Expert in several MNC's such as Pfizer, GSK, Wyeth, Abbott, Mead Johnson and Reckitt Benckiser. Trainer, Life Coach and Licensed Practitioner NLP. Senior Facilitator of MarkPlus Indonesia by Herman Kartajaya.",
     },
     {
-      name: "Amanda Putri",
-      position: "Training Coordinator",
-      image: "/placeholder.svg?height=300&width=300&text=Amanda+Putri",
+      name: "Amanda Setiadi, BSc",
+      position: "Accounting & Finance Manager",
+      image: "/images/team/amanda-setiadi.png",
       description:
-        "Koordinator program training dengan fokus pada customer experience dan program management excellence.",
+        "Accounting & Finance – Manager Auditor. Senior Audit Consultant – Big 4. Accounting Firm, Ernst & Young Indonesia. Audit Advisor & Manager at Brandmarkable Consulting Management. Accounting – Periplus, Escorindo Forwarding, Astro TV.",
     },
     {
-      name: "Yosephine Lim",
-      position: "Business Analyst",
-      image: "/placeholder.svg?height=300&width=300&text=Yosephine+Lim",
+      name: "Yosephine D.M.W.",
+      position: "Environmental Management Consultant",
+      image: "/images/team/yosephine-dmw.png",
       description:
-        "Spesialis dalam business analysis dan process improvement dengan background IT dan business consulting.",
+        "Anggota Komite Teknis 13-07 – Manajemen Lingkungan dan Ekolabel, Pusta. Tim Founder – Asosiasi Profesi LCA & Sustainability ProLCAS. Konsultan dan Trainer – Sistem Manajemen Lingkungan, Mutu, K3, Ekolabel, LCA, RECP, Green Chemistry. 25+ Tahun pengalaman – Konsultansi, Auditing, Pelatihan tentang AMDAL, Manajemen Lingkungan, Mutu dan K3 pada berbagai macam industri / organisasi selama di PT. Sucofindo dan PT. SGS Indonesia.",
     },
     {
-      name: "Rizki Pratama",
-      position: "Konsultan Bisnis",
-      image: "/placeholder.svg?height=300&width=300&text=Rizki+Pratama",
+      name: "Ir. Ruddy Handoko",
+      position: "Insurance & Risk Management Consultant",
+      image: "/images/team/ruddy-handoko.png",
       description:
-        "Konsultan muda berpengalaman dalam digital transformation dan business innovation untuk era modern.",
+        "Insurance Consultant & Specialist (General, Health, Life). Risk Management Consultant. Agribusiness Consultant.",
     },
     {
-      name: "Rudy Handoko",
-      position: "Senior Konsultan",
-      image: "/placeholder.svg?height=300&width=300&text=Rudy+Handoko",
+      name: "Andreas Gatot Broto, SE., M.Si., Ak, CA",
+      position: "Registered Accountant & Business Consultant",
+      image: "/images/team/andreas-gatot.png",
       description:
-        "Expert dalam financial planning dan business strategy dengan pengalaman 20+ tahun di sektor korporat.",
+        "REG. ACCOUNTANT: RNA.9405 / AK. CHARTERED ACCOUNTANT: 11.D19510 / CA. Bachelor Degree: Accounting at Diponegoro University. Master: Management Accounting at Diponegoro University. Consulting Business in Operations, Finance / Accounting and Tax Management. Controller at PT Nagita Trans Utama. Lecturer at Faculty of Economics and Business [Sebelas Maret University].",
     },
     {
-      name: "Gatot Subroto",
-      position: "Konsultan UMKM",
-      image: "/placeholder.svg?height=300&width=300&text=Gatot+Subroto",
+      name: "Dimas Rizki",
+      position: "Senior Creative & Digital Marketing",
+      image: "/images/team/dimas-rizki.png",
       description:
-        "Spesialis dalam pengembangan UMKM dan small business growth dengan fokus pada sustainability dan scalability.",
+        "Senior Tim Creative at Right n Big Coaching & Consulting. Content Creator Trainer & Consultant. Professional Photographer & Videographer. Digital Marketing Consultant. Social Media Specialist.",
     },
   ];
 
@@ -118,7 +118,7 @@ const Team = () => {
                   >
                     {member.position}
                   </p>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {member.description}
                   </p>
                 </div>
