@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from "lucide-react"
+import type React from "react";
+import { useState } from "react";
+import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,31 +12,40 @@ const Contact = () => {
     company: "",
     service: "",
     message: "",
-  })
+  });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission - integrate with WhatsApp or email service
-    const whatsappMessage = `Halo RightNBig, saya ${formData.name} dari ${formData.company}. Saya tertarik dengan layanan ${formData.service}. ${formData.message}`
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(whatsappMessage)}`
-    window.open(whatsappUrl, "_blank")
-  }
+    const whatsappMessage = `Halo RightNBig, saya ${formData.name} dari ${formData.company}. Saya tertarik dengan layanan ${formData.service}. ${formData.message}`;
+    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Hubungi Kami</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Hubungi Kami
+          </h2>
           <p className="text-xl text-gray-600">
-            Siap memulai transformasi bisnis Anda? Mari diskusikan kebutuhan Anda dengan tim ahli kami
+            Siap memulai transformasi bisnis Anda? Mari diskusikan kebutuhan
+            Anda dengan tim ahli kami
           </p>
         </div>
 
@@ -44,12 +53,19 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Informasi Kontak</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Informasi Kontak
+              </h3>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="text-blue-900 mt-1 flex-shrink-0" size={24} />
+                  <MapPin
+                    className="text-blue-900 mt-1 flex-shrink-0"
+                    size={24}
+                  />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Alamat Kantor</h4>
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                      Alamat Kantor
+                    </h4>
                     <p className="text-gray-600">
                       Jl. Sudirman No. 123, Lantai 15
                       <br />
@@ -61,16 +77,26 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Phone className="text-blue-900 mt-1 flex-shrink-0" size={24} />
+                  <Phone
+                    className="text-blue-900 mt-1 flex-shrink-0"
+                    size={24}
+                  />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Telepon</h4>
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                      Telepon
+                    </h4>
                     <p className="text-gray-600">+62 21 1234 5678</p>
-                    <p className="text-gray-600">+62 812 3456 7890 (WhatsApp)</p>
+                    <p className="text-gray-600">
+                      +62 812 3456 7890 (WhatsApp)
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Mail className="text-blue-900 mt-1 flex-shrink-0" size={24} />
+                  <Mail
+                    className="text-blue-900 mt-1 flex-shrink-0"
+                    size={24}
+                  />
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
                     <p className="text-gray-600">info@rightnbig.id</p>
@@ -79,10 +105,17 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Clock className="text-blue-900 mt-1 flex-shrink-0" size={24} />
+                  <Clock
+                    className="text-blue-900 mt-1 flex-shrink-0"
+                    size={24}
+                  />
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Jam Operasional</h4>
-                    <p className="text-gray-600">Senin - Jumat: 09:00 - 18:00</p>
+                    <h4 className="font-semibold text-gray-900 mb-1">
+                      Jam Operasional
+                    </h4>
+                    <p className="text-gray-600">
+                      Senin - Jumat: 09:00 - 18:00
+                    </p>
                     <p className="text-gray-600">Sabtu: 09:00 - 15:00</p>
                     <p className="text-gray-600">Minggu: Tutup</p>
                   </div>
@@ -107,32 +140,53 @@ const Contact = () => {
 
             {/* Social Media */}
             <div>
-              <h4 className="text-xl font-bold text-gray-900 mb-4">Ikuti Kami</h4>
+              <h4 className="text-xl font-bold text-gray-900 mb-4">
+                Ikuti Kami
+              </h4>
               <div className="flex space-x-4">
-                <a href="#" className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors">
+                <a
+                  href="#"
+                  className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors"
+                >
                   <span className="sr-only">Facebook</span>📘
                 </a>
-                <a href="#" className="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition-colors">
+                <a
+                  href="#"
+                  className="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition-colors"
+                >
                   <span className="sr-only">Instagram</span>📷
                 </a>
-                <a href="#" className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-colors">
+                <a
+                  href="#"
+                  className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-colors"
+                >
                   <span className="sr-only">TikTok</span>🎵
                 </a>
-                <a href="#" className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors">
+                <a
+                  href="#"
+                  className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors"
+                >
                   <span className="sr-only">LinkedIn</span>💼
                 </a>
               </div>
-              <p className="text-sm text-gray-600 mt-2">Follow us on TikTok untuk konten terbaru!</p>
+              <p className="text-sm text-gray-600 mt-2">
+                Follow us on TikTok untuk konten terbaru!
+              </p>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Request a Quote</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              Request a Quote
+            </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Nama Lengkap *
                   </label>
                   <input
@@ -147,7 +201,10 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Email *
                   </label>
                   <input
@@ -165,7 +222,10 @@ const Contact = () => {
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Nomor Telepon *
                   </label>
                   <input
@@ -180,7 +240,10 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label
+                    htmlFor="company"
+                    className="block text-sm font-semibold text-gray-700 mb-2"
+                  >
                     Nama Perusahaan
                   </label>
                   <input
@@ -196,7 +259,10 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="service" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="service"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Layanan yang Diminati *
                 </label>
                 <select
@@ -213,12 +279,17 @@ const Contact = () => {
                   <option value="UMKM Naik Kelas">UMKM Naik Kelas</option>
                   <option value="Personal Mapping">Personal Mapping</option>
                   <option value="Business Mapping">Business Mapping</option>
-                  <option value="Konsultasi Strategis">Konsultasi Strategis</option>
+                  <option value="Konsultasi Strategis">
+                    Konsultasi Strategis
+                  </option>
                 </select>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
+                >
                   Pesan
                 </label>
                 <textarea
@@ -255,7 +326,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

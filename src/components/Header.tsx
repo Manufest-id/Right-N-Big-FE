@@ -131,16 +131,7 @@ const Header = () => {
                     <Link
                       key={index}
                       to={service.href}
-                      className="block px-4 py-3 text-gray-700 hover:text-white hover:bg-green-600 transition-colors"
-                      style={{ ":hover": { backgroundColor: "#02A345" } }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = "#02A345";
-                        e.currentTarget.style.color = "white";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = "transparent";
-                        e.currentTarget.style.color = "#374151";
-                      }}
+                      className="block px-4 py-3 text-gray-700 bg-transparent hover:bg-[#02A345] hover:text-white transition-colors"
                       onClick={handleServiceClick}
                     >
                       {service.name}

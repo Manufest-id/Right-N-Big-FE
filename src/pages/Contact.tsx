@@ -155,34 +155,46 @@ const Contact = () => {
                 <h4 className="text-xl font-bold text-gray-900 mb-4">
                   Ikuti Kami
                 </h4>
-                <div className="flex space-x-4">
+                <div className="flex items-center space-x-8 mb-7 mt-7 overflow-visible">
                   <a
-                    href="#"
-                    className="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors"
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 text-4xl hover:text-green-600 transition-colors flex items-center justify-center"
+                    aria-label="Facebook"
                   >
-                    <span className="sr-only">Facebook</span>📘
+                    <i className="fab fa-facebook fa-lg"></i>
                   </a>
                   <a
-                    href="#"
-                    className="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition-colors"
+                    href="https://www.instagram.com/rightnbig/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 text-4xl hover:text-green-600 transition-colors flex items-center justify-center"
+                    aria-label="Instagram"
                   >
-                    <span className="sr-only">Instagram</span>📷
+                    <i className="fab fa-instagram fa-lg"></i>
                   </a>
                   <a
-                    href="#"
-                    className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-colors"
+                    href="https://www.youtube.com/channel/UC-lJKRE33fFOhGAZguIFsIQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 text-4xl hover:text-green-600 transition-colors flex items-center justify-center"
+                    aria-label="YouTube"
                   >
-                    <span className="sr-only">TikTok</span>🎵
+                    <i className="fab fa-youtube fa-lg"></i>
                   </a>
                   <a
-                    href="#"
-                    className="bg-blue-500 text-white p-3 rounded-full hover:bg-blue-600 transition-colors"
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 text-4xl hover:text-green-600 transition-colors flex items-center justify-center"
+                    aria-label="LinkedIn"
                   >
-                    <span className="sr-only">LinkedIn</span>💼
+                    <i className="fab fa-linkedin fa-lg"></i>
                   </a>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">
-                  Follow us on TikTok untuk konten terbaru!
+                  Follow us on social media untuk konten terbaru!
                 </p>
               </div>
             </div>
@@ -347,12 +359,18 @@ const Contact = () => {
 
           {/* Map Section */}
           <div className="mt-16">
-            <div className="bg-gray-200 h-64 rounded-2xl flex items-center justify-center">
-              <div className="text-center text-gray-600">
-                <MapPin size={48} className="mx-auto mb-4" />
-                <p className="text-lg font-semibold">Peta Lokasi Kantor</p>
-                <p>Jl. Sudirman No. 123, Jakarta Pusat</p>
-              </div>
+            <div className="bg-gray-200 h-64 rounded-2xl overflow-hidden flex items-center justify-center">
+              <iframe
+                title="Lokasi Kantor RightNBig"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8041212603364!2d106.8361743!3d-6.2405536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3c09a50f251%3A0x5af4d685e6ce6735!2sBina%20Sentra!5e0!3m2!1sen!2sid!4v1719312345678!5m2!1sen!2sid"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-64 rounded-2xl"
+              ></iframe>
             </div>
           </div>
         </div>

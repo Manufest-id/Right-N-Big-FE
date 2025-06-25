@@ -98,10 +98,7 @@ const News = () => {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3
-                    className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 hover:transition-colors cursor-pointer"
-                    style={{ ":hover": { color: "#02A345" } }}
-                  >
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 cursor-pointer hover:text-[#02A345] transition-colors">
                     {newsItems[0].title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-6 text-lg">
@@ -152,10 +149,7 @@ const News = () => {
                           {item.category}
                         </span>
                       </div>
-                      <h4
-                        className="text-sm font-bold text-gray-900 mb-2 hover:transition-colors cursor-pointer line-clamp-2"
-                        style={{ ":hover": { color: "#02A345" } }}
-                      >
+                      <h4 className="text-sm font-bold text-gray-900 mb-2 cursor-pointer line-clamp-2 hover:text-[#02A345] transition-colors">
                         {item.title}
                       </h4>
                       <div className="flex items-center space-x-2 text-xs text-gray-500">
@@ -190,10 +184,7 @@ const News = () => {
                       {item.category}
                     </span>
                   </div>
-                  <h3
-                    className="text-xl font-bold text-gray-900 mb-3 hover:transition-colors cursor-pointer"
-                    style={{ ":hover": { color: "#02A345" } }}
-                  >
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 cursor-pointer hover:text-[#02A345] transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-4">

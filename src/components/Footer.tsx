@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-2">
           {/* Company Info */}
           <div className="space-y-6">
             <div>
@@ -24,30 +24,42 @@ const Footer = () => {
                 berkualitas tinggi untuk mencapai kesuksesan yang berkelanjutan.
               </p>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex space-x-6">
               <a
-                href="#"
-                className="bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition-colors"
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-3xl hover:text-gray-300 transition-colors flex items-center justify-center"
+                aria-label="Facebook"
               >
-                📘
+                <i className="fab fa-facebook fa-lg"></i>
               </a>
               <a
-                href="#"
-                className="bg-pink-600 p-2 rounded-full hover:bg-pink-700 transition-colors"
+                href="https://www.instagram.com/rightnbig/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-3xl hover:text-gray-300 transition-colors flex items-center justify-center"
+                aria-label="Instagram"
               >
-                📷
+                <i className="fab fa-instagram fa-lg"></i>
               </a>
               <a
-                href="#"
-                className="bg-black p-2 rounded-full hover:bg-gray-800 transition-colors"
+                href="https://www.youtube.com/channel/UC-lJKRE33fFOhGAZguIFsIQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-3xl hover:text-gray-300 transition-colors flex items-center justify-center"
+                aria-label="YouTube"
               >
-                🎵
+                <i className="fab fa-youtube fa-lg"></i>
               </a>
               <a
-                href="#"
-                className="bg-blue-500 p-2 rounded-full hover:bg-blue-600 transition-colors"
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-3xl hover:text-gray-300 transition-colors flex items-center justify-center"
+                aria-label="LinkedIn"
               >
-                💼
+                <i className="fab fa-linkedin fa-lg"></i>
               </a>
             </div>
           </div>
@@ -171,10 +183,35 @@ const Footer = () => {
                   style={{ color: "#02A345" }}
                   className="mt-1 flex-shrink-0"
                   size={20}
-                />
-                <div className="text-gray-300">
-                  <p>Jl. Sudirman No. 123, Lantai 15</p>
-                  <p>Jakarta Pusat 10220</p>
+                />{" "}
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="text-gray-300 space-y-2">
+                      <div>
+                        <h1 className="font-bold">Consulting Office:</h1>
+                        <p>Gedung Bina Sentra Lantai 3, room 303</p>
+                        <p>Kompleks Perkantoran Bidakara,</p>
+                        <p>
+                          Jl. Gatot Subroto No.8 Kavling 71, RT.8/RW.8, Menteng
+                          Dalam, Kec. Tebet, Kota Jakarta Selatan, Daerah Khusus
+                          Ibukota Jakarta 12870
+                        </p>
+                      </div>
+                      <div>
+                        <h1 className="font-bold mt-4">
+                          Administration Office:
+                        </h1>
+                        <p>
+                          Jl. Taman Pluit Kencana Blok P No. 28-F
+                          <br />
+                          Pluit, Penjaringan, Jakarta Utara 14450
+                          <br />
+                          Indonesia
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* ...phone and mail blocks... */}
                 </div>
               </div>
               <div className="flex items-center space-x-3">

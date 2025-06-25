@@ -11,10 +11,10 @@ const Clients = () => {
   });
 
   const finalNumbers = {
-    participants: 2500,
-    sessions: 150,
-    clients: 500,
-    satisfaction: 98,
+    participants: 2000,
+    sessions: 100,
+    clients: 45,
+    satisfaction: 20,
   };
 
   useEffect(() => {
@@ -86,9 +86,7 @@ const Clients = () => {
               >
                 {animatedNumbers.participants.toLocaleString()}+
               </div>
-              <div className="text-gray-600 font-semibold">
-                Peserta Training
-              </div>
+              <div className="text-gray-600 font-semibold">Participants</div>
             </div>
             <div className="text-center p-6 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl">
               <div
@@ -97,7 +95,9 @@ const Clients = () => {
               >
                 {animatedNumbers.sessions}+
               </div>
-              <div className="text-gray-600 font-semibold">Sesi Coaching</div>
+              <div className="text-gray-600 font-semibold">
+                Coaching Session
+              </div>
             </div>
             <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl">
               <div
@@ -106,17 +106,17 @@ const Clients = () => {
               >
                 {animatedNumbers.clients}+
               </div>
-              <div className="text-gray-600 font-semibold">Klien Bahagia</div>
+              <div className="text-gray-600 font-semibold">Happy Clients</div>
             </div>
             <div className="text-center p-6 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl">
               <div
                 className="text-4xl lg:text-5xl font-bold mb-2"
                 style={{ color: "#996533" }}
               >
-                {animatedNumbers.satisfaction}%
+                {animatedNumbers.satisfaction}+
               </div>
               <div className="text-gray-600 font-semibold">
-                Tingkat Kepuasan
+                Training Modules
               </div>
             </div>
           </div>
