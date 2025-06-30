@@ -54,9 +54,10 @@ const Hero = () => {
               </h1>
               <div className="space-y-4 text-lg lg:text-xl">
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Transformasi bisnis dan personal Anda bersama RightNBig. Kami
-                  membantu individu dan organisasi mencapai potensi terbaik
-                  melalui coaching dan training berkualitas tinggi.
+                  Transformasi bisnis dan personal Anda bersama Right n Big
+                  Coaching & Consulting. Kami membantu individu dan organisasi
+                  mencapai potensi terbaik melalui coaching dan training
+                  berkualitas tinggi.
                 </p>
               </div>
             </div>
@@ -79,9 +80,9 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative flex justify-end">
+          <div className="relative flex ml-60">
             <img
-              src="/images/tony.webp"
+              src="/images/tony.png"
               alt="Tony Chen - Founder & CEO RightNBig"
               className="w-full max-w-md h-auto object-contain"
             />

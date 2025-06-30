@@ -19,9 +19,9 @@ const EventSlider = () => {
       date: "15 Februari 2024",
       location: "Jakarta Convention Center",
       participants: "50 peserta",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/events/leadership-workshop.jpg",
       description:
-        "Workshop intensif untuk mengembangkan kemampuan kepemimpinan yang efektif",
+        "Workshop intensif untuk mengembangkan kemampuan kepemimpinan yang efektif di era digital modern",
     },
     {
       id: 2,
@@ -29,9 +29,9 @@ const EventSlider = () => {
       date: "22 Februari 2024",
       location: "Surabaya Business Center",
       participants: "100 peserta",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/events/umkmnaikkelas.jpg",
       description:
-        "Program komprehensif untuk mengembangkan UMKM menjadi bisnis yang lebih besar",
+        "Program komprehensif untuk mengembangkan UMKM menjadi bisnis yang lebih besar dan berkelanjutan",
     },
     {
       id: 3,
@@ -39,9 +39,9 @@ const EventSlider = () => {
       date: "1 Maret 2024",
       location: "Bandung Creative Hub",
       participants: "75 peserta",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/events/personal-branding.jpg",
       description:
-        "Membangun personal brand yang kuat untuk kesuksesan karir dan bisnis",
+        "Membangun personal brand yang kuat untuk kesuksesan karir dan bisnis di era digital",
     },
   ];
 
@@ -81,16 +81,16 @@ const EventSlider = () => {
             >
               {events.map((event) => (
                 <div key={event.id} className="w-full flex-shrink-0">
-                  <div className="grid lg:grid-cols-2 gap-0">
-                    <div className="relative h-96 lg:h-auto">
+                  <div className="grid lg:grid-cols-2 gap-0 min-h-[500px]">
+                    <div className="relative h-96 lg:h-full overflow-hidden">
                       <img
                         src={event.image || "/placeholder.svg"}
                         alt={event.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover object-center"
                       />
                       <div className="absolute inset-0 bg-black bg-opacity-20"></div>
                     </div>
-                    <div className="p-8 lg:p-12 bg-gradient-to-br from-green-50 to-emerald-50 flex flex-col justify-center">
+                    <div className="p-8 lg:p-12 bg-gradient-to-br from-green-50 to-emerald-50 flex flex-col justify-center min-h-[500px]">
                       <div className="space-y-6">
                         <h3 className="text-3xl font-bold text-gray-900">
                           {event.title}

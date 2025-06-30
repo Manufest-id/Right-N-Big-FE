@@ -31,15 +31,15 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-6">
-                Tentang RightNBig
+                Tentang Right n Big Coaching & Consulting
               </h1>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  RightNBig adalah perusahaan konsultan bisnis dan pengembangan
-                  SDM yang berkomitmen membantu individu dan organisasi mencapai
-                  potensi terbaik mereka. Dengan motto "Menjadi Benar, Menjadi
-                  Besar", kami percaya bahwa kesuksesan sejati dimulai dari
-                  fondasi yang benar.
+                  Right n Big Coaching & Consulting adalah perusahaan konsultan
+                  bisnis dan pengembangan SDM yang berkomitmen membantu individu
+                  dan organisasi mencapai potensi terbaik mereka. Dengan motto
+                  "Menjadi Benar, Menjadi Besar", kami percaya bahwa kesuksesan
+                  sejati dimulai dari fondasi yang benar.
                 </p>
                 <p>
                   Kami menyediakan layanan coaching, training, dan konsultasi

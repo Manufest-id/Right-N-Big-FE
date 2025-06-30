@@ -1,63 +1,64 @@
 import { Calendar, User, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const News = () => {
   const newsItems = [
     {
-      id: 1,
+      id: "1",
       title: "RightNBig Meluncurkan Program UMKM Naik Kelas 2024",
       excerpt:
         "Program terbaru untuk membantu UMKM Indonesia berkembang menjadi bisnis yang lebih besar dan berkelanjutan.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/news/umkm.jpg",
       date: "15 Januari 2024",
       author: "Tony Chen",
       category: "Program Baru",
     },
     {
-      id: 2,
+      id: "2",
       title: "Kesuksesan Workshop Leadership Excellence di Jakarta",
       excerpt:
         "Lebih dari 200 peserta mengikuti workshop leadership yang diselenggarakan di Jakarta Convention Center.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/news/leadership.jpg",
       date: "10 Januari 2024",
       author: "Julian Foe",
       category: "Event",
     },
     {
-      id: 3,
+      id: "3",
       title: "Kolaborasi dengan Universitas Terkemuka untuk Program Magang",
       excerpt:
         "RightNBig menjalin kerjasama dengan beberapa universitas untuk program magang mahasiswa di bidang business coaching.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/news/university.jpg",
       date: "5 Januari 2024",
       author: "Fransisca Diwanti",
       category: "Kerjasama",
     },
     {
-      id: 4,
+      id: "4",
       title: "Pencapaian 500+ Klien Bahagia di Tahun 2023",
       excerpt:
         "RightNBig menutup tahun 2023 dengan pencapaian luar biasa, melayani lebih dari 500 klien dengan tingkat kepuasan 98%.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/news/happyclient.jpg",
       date: "30 Desember 2023",
       author: "Amanda Putri",
       category: "Pencapaian",
     },
     {
-      id: 5,
+      id: "5",
       title: "Tren Business Coaching di Indonesia 2024",
       excerpt:
         "Analisis mendalam tentang perkembangan industri business coaching di Indonesia dan prediksi untuk tahun 2024.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/news/coaching.jpg",
       date: "28 Desember 2023",
       author: "Rudy Handoko",
       category: "Insight",
     },
     {
-      id: 6,
+      id: "6",
       title: "Tips Membangun Personal Brand yang Kuat",
       excerpt:
         "Panduan lengkap untuk membangun personal brand yang autentik dan berdampak dalam dunia bisnis modern.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/news/personalbranding.jpg",
       date: "25 Desember 2023",
       author: "Yosephine Lim",
       category: "Tips",
@@ -81,7 +82,10 @@ const News = () => {
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Featured Article */}
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <Link
+                to={`/news/${newsItems[0].id}`}
+                className="block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              >
                 <div className="relative">
                   <img
                     src={newsItems[0].image || "/placeholder.svg"}
@@ -98,7 +102,7 @@ const News = () => {
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 cursor-pointer hover:text-[#02A345] transition-colors">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 hover:text-green-600 transition-colors">
                     {newsItems[0].title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-6 text-lg">
@@ -115,24 +119,25 @@ const News = () => {
                         <span>{newsItems[0].author}</span>
                       </div>
                     </div>
-                    <button
+                    <div
                       className="font-semibold hover:opacity-80 transition-colors flex items-center space-x-2"
                       style={{ color: "#02A345" }}
                     >
                       <span>Baca Selengkapnya</span>
                       <ArrowRight size={16} />
-                    </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
 
             {/* Sidebar Articles */}
             <div className="space-y-6">
               {newsItems.slice(1, 4).map((item) => (
-                <div
+                <Link
                   key={item.id}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                  to={`/news/${item.id}`}
+                  className="block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="flex">
                     <img
@@ -149,7 +154,7 @@ const News = () => {
                           {item.category}
                         </span>
                       </div>
-                      <h4 className="text-sm font-bold text-gray-900 mb-2 cursor-pointer line-clamp-2 hover:text-[#02A345] transition-colors">
+                      <h4 className="text-sm font-bold text-gray-900 mb-2 hover:text-green-600 transition-colors line-clamp-2">
                         {item.title}
                       </h4>
                       <div className="flex items-center space-x-2 text-xs text-gray-500">
@@ -158,7 +163,7 @@ const News = () => {
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -166,9 +171,10 @@ const News = () => {
           {/* More Articles */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
             {newsItems.slice(3).map((item) => (
-              <div
+              <Link
                 key={item.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                to={`/news/${item.id}`}
+                className="block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
               >
                 <img
                   src={item.image || "/placeholder.svg"}
@@ -184,7 +190,7 @@ const News = () => {
                       {item.category}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 cursor-pointer hover:text-[#02A345] transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-green-600 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-4">
@@ -195,25 +201,16 @@ const News = () => {
                       <Calendar size={14} />
                       <span>{item.date}</span>
                     </div>
-                    <button
+                    <div
                       className="font-semibold hover:opacity-80 transition-colors"
                       style={{ color: "#02A345" }}
                     >
                       Baca →
-                    </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <button
-              className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors text-lg font-semibold"
-              style={{ backgroundColor: "#02A345" }}
-            >
-              Lihat Semua Artikel
-            </button>
           </div>
         </div>
       </section>
