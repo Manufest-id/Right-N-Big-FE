@@ -7,6 +7,7 @@ import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [closeDropdownTimer, setCloseDropdownTimer] = useState<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
   const navItems = [
@@ -108,8 +109,20 @@ const Header = () => {
                     ? { color: "#02A345", borderColor: "#02A345" }
                     : {}
                 }
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
+                onMouseEnter={() => {
+                  if (closeDropdownTimer) {
+                    clearTimeout(closeDropdownTimer);
+                    setCloseDropdownTimer(null);
+                  }
+                  setIsServicesOpen(true);
+                }}
+                onMouseLeave={() => {
+                  const timer = setTimeout(() => {
+                    setIsServicesOpen(false);
+                    setCloseDropdownTimer(null);
+                  }, 200);
+                  setCloseDropdownTimer(timer);
+                }}
               >
                 <span>Layanan</span>
                 <ChevronDown
@@ -124,14 +137,26 @@ const Header = () => {
               {isServicesOpen && (
                 <div
                   className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50"
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
+                  onMouseEnter={() => {
+                    if (closeDropdownTimer) {
+                      clearTimeout(closeDropdownTimer);
+                      setCloseDropdownTimer(null);
+                    }
+                    setIsServicesOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    const timer = setTimeout(() => {
+                      setIsServicesOpen(false);
+                      setCloseDropdownTimer(null);
+                    }, 200);
+                    setCloseDropdownTimer(timer);
+                  }}
                 >
                   {serviceItems.map((service, index) => (
                     <Link
                       key={index}
                       to={service.href}
-                      className="block px-4 py-3 text-gray-700 bg-transparent hover:bg-[#02A345] hover:text-white transition-colors"
+                      className="block px-4 py-3 text-gray-700 hover:text-white hover:bg-green-600 transition-colors"
                       onClick={handleServiceClick}
                     >
                       {service.name}
