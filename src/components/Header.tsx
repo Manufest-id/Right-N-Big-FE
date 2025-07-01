@@ -77,24 +77,39 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "border-b-2"
-                    : "text-gray-700 hover:text-green-600"
-                }`}
-                style={
-                  isActive(item.href)
-                    ? { color: "#02A345", borderColor: "#02A345" }
-                    : {}
-                }
-              >
-                {item.name}
-              </Link>
-            ))}
+            {/* Beranda */}
+            <Link
+              to="/"
+              className={`font-medium transition-colors ${
+                isActive("/")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Beranda
+            </Link>
+
+            {/* Tentang Kami */}
+            <Link
+              to="/about"
+              className={`font-medium transition-colors ${
+                isActive("/about")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/about")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Tentang Kami
+            </Link>
 
             {/* Services Dropdown */}
             <div className="relative">
@@ -166,6 +181,57 @@ const Header = () => {
               )}
             </div>
 
+            {/* Tim */}
+            <Link
+              to="/team"
+              className={`font-medium transition-colors ${
+                isActive("/team")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/team")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Tim
+            </Link>
+
+            {/* Berita */}
+            <Link
+              to="/news"
+              className={`font-medium transition-colors ${
+                isActive("/news")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/news")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Berita
+            </Link>
+
+            {/* Kontak */}
+            <Link
+              to="/contact"
+              className={`font-medium transition-colors ${
+                isActive("/contact")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/contact")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Kontak
+            </Link>
+
             <Link
               to="/contact"
               className="text-white px-6 py-2 rounded-lg hover:opacity-90 transition-colors"
@@ -188,21 +254,33 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-medium transition-colors ${
-                    isActive(item.href)
-                      ? ""
-                      : "text-gray-700 hover:text-green-600"
-                  }`}
-                  style={isActive(item.href) ? { color: "#02A345" } : {}}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {/* Beranda */}
+              <Link
+                to="/"
+                className={`font-medium transition-colors ${
+                  isActive("/")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Beranda
+              </Link>
+
+              {/* Tentang Kami */}
+              <Link
+                to="/about"
+                className={`font-medium transition-colors ${
+                  isActive("/about")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/about") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Tentang Kami
+              </Link>
 
               {/* Mobile Services Dropdown */}
               <div>
@@ -240,6 +318,48 @@ const Header = () => {
                   </div>
                 )}
               </div>
+
+              {/* Tim */}
+              <Link
+                to="/team"
+                className={`font-medium transition-colors ${
+                  isActive("/team")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/team") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Tim
+              </Link>
+
+              {/* Berita */}
+              <Link
+                to="/news"
+                className={`font-medium transition-colors ${
+                  isActive("/news")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/news") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Berita
+              </Link>
+
+              {/* Kontak */}
+              <Link
+                to="/contact"
+                className={`font-medium transition-colors ${
+                  isActive("/contact")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/contact") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Kontak
+              </Link>
 
               <Link
                 to="/contact"

@@ -56,7 +56,7 @@ const About = () => {
             </div>
             <div className="relative">
               <img
-                src="/placeholder.svg?height=500&width=600"
+                src="/images/UMKM-2-1024x684.jpg.webp"
                 alt="About RightNBig"
                 className="w-full rounded-2xl shadow-2xl"
               />
