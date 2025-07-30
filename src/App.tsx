@@ -13,6 +13,7 @@ import BusinessCoaching from "./pages/BusinessCoaching";
 import BusinessConsulting from "./pages/BusinessConsulting";
 import SMEEmpowerment from "./pages/SMEEmpowerment";
 import PersonalMapping from "./pages/PersonalMapping";
+import ManagementServices from "./pages/ManagementServices";
 
 function App() {
   return (
@@ -42,6 +43,10 @@ function App() {
           <Route
             path="/services/personal-mapping"
             element={<PersonalMapping />}
+          />
+          <Route
+            path="/services/management-services"
+            element={<ManagementServices />}
           />{" "}
           {/* New route */}
           <Route path="/team" element={<Team />} />

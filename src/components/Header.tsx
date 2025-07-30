@@ -21,9 +21,9 @@ const Header = () => {
     { name: "Business Training", href: "/services/business-training" },
     { name: "Business Coaching", href: "/services/business-coaching" },
     { name: "SME Empowerment", href: "/services/sme-empowerment" },
-    { name: "Personal Mapping", href: "/services/personal-mapping" }, // Updated href
+    { name: "Personal Mapping", href: "/services/personal-mapping" },
     { name: "Business Consulting", href: "/services/business-consulting" },
-    { name: "Management Services", href: "/services#management-services" },
+    { name: "Management Services", href: "/services/management-services" }, // Updated href
   ];
 
   const isActive = (path: string) => {
@@ -102,7 +102,7 @@ const Header = () => {
               onMouseLeave={() => setIsServicesOpen(false)}
             >
               <Link
-                to="/services" // Make the main "Layanan" link clickable
+                to="/services" // This link will still navigate to /services if clicked
                 className={`font-medium transition-colors flex items-center space-x-1 ${
                   isServicesActive()
                     ? "border-b-2"
@@ -113,9 +113,7 @@ const Header = () => {
                     ? { color: "#02A345", borderColor: "#02A345" }
                     : {}
                 }
-                onClick={() => {
-                  setIsServicesOpen(!isServicesOpen); // Toggle dropdown on click for mobile/desktop
-                }}
+                // Removed onClick here for desktop, hover handles dropdown visibility
               >
                 <span>Layanan</span>
                 <ChevronDown
@@ -130,8 +128,7 @@ const Header = () => {
               {isServicesOpen && (
                 <div
                   className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50"
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
+                  // onMouseEnter and onMouseLeave are now handled by the parent div
                 >
                   {serviceItems.map((service, index) => (
                     <Link

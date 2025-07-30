@@ -55,7 +55,7 @@ const Services = () => {
       title: "Management Services",
       description:
         "Layanan konsultasi mendalam untuk membantu organisasi merumuskan strategi bisnis yang efektif dan implementasinya.",
-      href: "/services#management-services", // Anchor link
+      href: "/services/management-services", // Updated to dedicated page
       id: "management-services",
     },
   ];
