@@ -54,6 +54,31 @@ function App() {
           <Route path="/news/:id" element={<NewsDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <a
+          href="http://wa.me/6281319111124"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            position: "fixed",
+            bottom: "24px",
+            right: "24px",
+            zIndex: 1000,
+            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+            borderRadius: "50%",
+            width: "60px",
+            height: "60px",
+            background: "white",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img
+            src="/images/whatsapp.png"
+            alt="WhatsApp"
+            style={{ width: "40px", height: "40px" }}
+          />
+        </a>
         <Footer />
       </div>
     </Router>

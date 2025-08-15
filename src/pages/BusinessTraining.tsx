@@ -12,9 +12,25 @@ import {
   MapPin,
   CheckCircle,
 } from "lucide-react";
+import * as React from "react";
 
 const BusinessTraining = () => {
-  const programs = [
+  type Program = {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    details: { label: string; value: string; icon: React.JSX.Element }[];
+    content: string[];
+    subtitle?: string;
+    modules?: { name: string; description: string; icon: React.JSX.Element }[];
+    acronym?: { letter: string; word: string; description: string }[];
+    quote?: string;
+    concepts?: { name: string; description: string; icon: React.JSX.Element }[];
+    values?: string[];
+    programName?: string;
+  };
+  const programs: Program[] = [
     {
       id: "sales-revolution",
       title: "REVOLUTION SALES",
@@ -75,6 +91,7 @@ const BusinessTraining = () => {
           icon: <CheckCircle size={24} style={{ color: "#02A345" }} />,
         },
       ],
+      content: [],
     },
     {
       id: "moves",
@@ -127,6 +144,7 @@ const BusinessTraining = () => {
             "Setiap peserta diajak untuk menjadi agen perubahan dan penggerak perusahaan ke arah yang lebih baik (Going to the next level).",
         },
       ],
+      content: [],
     },
     {
       id: "communication-public-speaking",
@@ -169,6 +187,7 @@ const BusinessTraining = () => {
           icon: <MapPin size={24} style={{ color: "#02A345" }} />,
         },
       ],
+      content: [],
     },
     {
       id: "employee-to-intrapreneur",
@@ -201,6 +220,7 @@ const BusinessTraining = () => {
         "Integritas",
       ],
       programName: "JOY of Working (GRACE)",
+      content: [],
     },
   ];
 

@@ -88,11 +88,11 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="relative flex justify-end">
+          <div className="relative flex justify-center lg:ml-60 mt-8 lg:mt-0">
             <img
-              src="/images/tony.webp"
+              src="/images/tony.png"
               alt="Tony Chen - Founder & CEO RightNBig"
-              className="w-full max-w-md h-auto object-contain"
+              className="w-3/4 max-w-xs sm:max-w-sm md:max-w-md h-auto object-contain"
             />
           </div>
         </div>

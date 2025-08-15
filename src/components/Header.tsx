@@ -7,6 +7,7 @@ import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [closeDropdownTimer, setCloseDropdownTimer] = useState<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
   const navItems = [
@@ -23,7 +24,7 @@ const Header = () => {
     { name: "SME Empowerment", href: "/services/sme-empowerment" },
     { name: "Personal Mapping", href: "/services/personal-mapping" },
     { name: "Business Consulting", href: "/services/business-consulting" },
-    { name: "Management Services", href: "/services/management-services" }, // Updated href
+    { name: "Management Services", href: "/services/management-services" },
   ];
 
   const isActive = (path: string) => {
@@ -31,7 +32,7 @@ const Header = () => {
   };
 
   const isServicesActive = () => {
-    return location.pathname.startsWith("/services");
+    return location.pathname === "/services";
   };
 
   const handleServiceClick = () => {
@@ -76,33 +77,43 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "border-b-2"
-                    : "text-gray-700 hover:text-green-600"
-                }`}
-                style={
-                  isActive(item.href)
-                    ? { color: "#02A345", borderColor: "#02A345" }
-                    : {}
-                }
-              >
-                {item.name}
-              </Link>
-            ))}
+            {/* Beranda */}
+            <Link
+              to="/"
+              className={`font-medium transition-colors ${
+                isActive("/")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Beranda
+            </Link>
+
+            {/* Tentang Kami */}
+            <Link
+              to="/about"
+              className={`font-medium transition-colors ${
+                isActive("/about")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/about")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Tentang Kami
+            </Link>
 
             {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
-            >
-              <Link
-                to="/services" // This link will still navigate to /services if clicked
+            <div className="relative">
+              <button
                 className={`font-medium transition-colors flex items-center space-x-1 ${
                   isServicesActive()
                     ? "border-b-2"
@@ -113,7 +124,20 @@ const Header = () => {
                     ? { color: "#02A345", borderColor: "#02A345" }
                     : {}
                 }
-                // Removed onClick here for desktop, hover handles dropdown visibility
+                onMouseEnter={() => {
+                  if (closeDropdownTimer) {
+                    clearTimeout(closeDropdownTimer);
+                    setCloseDropdownTimer(null);
+                  }
+                  setIsServicesOpen(true);
+                }}
+                onMouseLeave={() => {
+                  const timer = setTimeout(() => {
+                    setIsServicesOpen(false);
+                    setCloseDropdownTimer(null);
+                  }, 200);
+                  setCloseDropdownTimer(timer);
+                }}
               >
                 <span>Layanan</span>
                 <ChevronDown
@@ -122,28 +146,32 @@ const Header = () => {
                     isServicesOpen ? "rotate-180" : ""
                   }`}
                 />
-              </Link>
+              </button>
 
               {/* Dropdown Menu */}
               {isServicesOpen && (
                 <div
                   className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50"
-                  // onMouseEnter and onMouseLeave are now handled by the parent div
+                  onMouseEnter={() => {
+                    if (closeDropdownTimer) {
+                      clearTimeout(closeDropdownTimer);
+                      setCloseDropdownTimer(null);
+                    }
+                    setIsServicesOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    const timer = setTimeout(() => {
+                      setIsServicesOpen(false);
+                      setCloseDropdownTimer(null);
+                    }, 200);
+                    setCloseDropdownTimer(timer);
+                  }}
                 >
                   {serviceItems.map((service, index) => (
                     <Link
                       key={index}
                       to={service.href}
                       className="block px-4 py-3 text-gray-700 hover:text-white hover:bg-green-600 transition-colors"
-                      style={{ ":hover": { backgroundColor: "#02A345" } }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = "#02A345";
-                        e.currentTarget.style.color = "white";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = "transparent";
-                        e.currentTarget.style.color = "#374151";
-                      }}
                       onClick={handleServiceClick}
                     >
                       {service.name}
@@ -152,6 +180,57 @@ const Header = () => {
                 </div>
               )}
             </div>
+
+            {/* Tim */}
+            <Link
+              to="/team"
+              className={`font-medium transition-colors ${
+                isActive("/team")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/team")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Tim
+            </Link>
+
+            {/* Berita */}
+            <Link
+              to="/news"
+              className={`font-medium transition-colors ${
+                isActive("/news")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/news")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Berita
+            </Link>
+
+            {/* Kontak */}
+            <Link
+              to="/contact"
+              className={`font-medium transition-colors ${
+                isActive("/contact")
+                  ? "border-b-2"
+                  : "text-gray-700 hover:text-green-600"
+              }`}
+              style={
+                isActive("/contact")
+                  ? { color: "#02A345", borderColor: "#02A345" }
+                  : {}
+              }
+            >
+              Kontak
+            </Link>
 
             <Link
               to="/contact"
@@ -175,33 +254,44 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`font-medium transition-colors ${
-                    isActive(item.href)
-                      ? ""
-                      : "text-gray-700 hover:text-green-600"
-                  }`}
-                  style={isActive(item.href) ? { color: "#02A345" } : {}}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {/* Beranda */}
+              <Link
+                to="/"
+                className={`font-medium transition-colors ${
+                  isActive("/")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Beranda
+              </Link>
+
+              {/* Tentang Kami */}
+              <Link
+                to="/about"
+                className={`font-medium transition-colors ${
+                  isActive("/about")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/about") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Tentang Kami
+              </Link>
 
               {/* Mobile Services Dropdown */}
               <div>
-                <Link
-                  to="/services" // Make the main "Layanan" link clickable on mobile
+                <button
                   className={`font-medium transition-colors flex items-center space-x-1 w-full text-left ${
                     isServicesActive()
                       ? ""
                       : "text-gray-700 hover:text-green-600"
                   }`}
                   style={isServicesActive() ? { color: "#02A345" } : {}}
-                  onClick={() => setIsServicesOpen(!isServicesOpen)} // Toggle dropdown on click
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
                 >
                   <span>Layanan</span>
                   <ChevronDown
@@ -210,7 +300,7 @@ const Header = () => {
                       isServicesOpen ? "rotate-180" : ""
                     }`}
                   />
-                </Link>
+                </button>
 
                 {/* Mobile Dropdown Items */}
                 {isServicesOpen && (
@@ -228,6 +318,48 @@ const Header = () => {
                   </div>
                 )}
               </div>
+
+              {/* Tim */}
+              <Link
+                to="/team"
+                className={`font-medium transition-colors ${
+                  isActive("/team")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/team") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Tim
+              </Link>
+
+              {/* Berita */}
+              <Link
+                to="/news"
+                className={`font-medium transition-colors ${
+                  isActive("/news")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/news") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Berita
+              </Link>
+
+              {/* Kontak */}
+              <Link
+                to="/contact"
+                className={`font-medium transition-colors ${
+                  isActive("/contact")
+                    ? ""
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+                style={isActive("/contact") ? { color: "#02A345" } : {}}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Kontak
+              </Link>
 
               <Link
                 to="/contact"
