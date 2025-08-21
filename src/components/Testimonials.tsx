@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState } from "react";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 const Testimonials = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const testimonials = [
     {
@@ -47,22 +47,28 @@ const Testimonials = () => {
       industry: "Fashion",
       results: "Revenue +250%, Ekspansi 3 kota",
     },
-  ]
+  ];
 
   const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
-  }
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
-  }
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+    );
+  };
 
   return (
     <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Testimoni Klien</h2>
-          <p className="text-xl text-gray-600">Dengarkan cerita sukses dari klien-klien kami</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Testimoni Klien
+          </h2>
+          <p className="text-xl text-gray-600">
+            Dengarkan cerita sukses dari klien-klien kami
+          </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
@@ -73,34 +79,42 @@ const Testimonials = () => {
 
             <div className="text-center mb-8">
               <div className="flex justify-center mb-4">
-                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                  <Star key={i} size={24} className="text-yellow-400 fill-current" />
-                ))}
+                {[...Array(testimonials[currentTestimonial].rating)].map(
+                  (_, i) => (
+                    <Star
+                      key={i}
+                      size={24}
+                      className="text-yellow-400 fill-current"
+                    />
+                  )
+                )}
               </div>
               <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed italic mb-4">
                 "{testimonials[currentTestimonial].text}"
               </p>
-              <div className="bg-green-50 rounded-lg p-4 mb-4">
-                <p className="text-sm font-semibold" style={{ color: "#02A345" }}>
-                  Hasil yang Dicapai:
-                </p>
-                <p style={{ color: "#996533" }}>{testimonials[currentTestimonial].results}</p>
-              </div>
             </div>
 
             <div className="flex items-center justify-center space-x-4">
               <img
-                src={testimonials[currentTestimonial].image || "/placeholder.svg"}
+                src={
+                  testimonials[currentTestimonial].image || "/placeholder.svg"
+                }
                 alt={testimonials[currentTestimonial].name}
                 className="w-16 h-16 rounded-full object-cover border-2 border-green-200"
               />
               <div className="text-center">
-                <h4 className="text-xl font-bold text-gray-900">{testimonials[currentTestimonial].name}</h4>
-                <p className="text-gray-600">{testimonials[currentTestimonial].position}</p>
+                <h4 className="text-xl font-bold text-gray-900">
+                  {testimonials[currentTestimonial].name}
+                </h4>
+                <p className="text-gray-600">
+                  {testimonials[currentTestimonial].position}
+                </p>
                 <p className="font-semibold" style={{ color: "#02A345" }}>
                   {testimonials[currentTestimonial].company}
                 </p>
-                <p className="text-sm text-gray-500">Industri: {testimonials[currentTestimonial].industry}</p>
+                <p className="text-sm text-gray-500">
+                  Industri: {testimonials[currentTestimonial].industry}
+                </p>
               </div>
             </div>
 
@@ -129,7 +143,8 @@ const Testimonials = () => {
                 onClick={() => setCurrentTestimonial(index)}
                 className={`w-3 h-3 rounded-full transition-colors`}
                 style={{
-                  backgroundColor: index === currentTestimonial ? "#02A345" : "#d1d5db",
+                  backgroundColor:
+                    index === currentTestimonial ? "#02A345" : "#d1d5db",
                 }}
               />
             ))}
@@ -137,7 +152,7 @@ const Testimonials = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

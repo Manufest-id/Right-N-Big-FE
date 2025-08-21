@@ -12,6 +12,11 @@ const Hero = () => {
     phone: "",
   });
 
+  const handleTransformasi = () => {
+    const whatsappUrl = "https://wa.me/6281234567890";
+    window.open(whatsappUrl, "_blank");
+  };
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -22,7 +27,7 @@ const Hero = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappMessage = `Halo RightNBig, saya ${formData.name}. Email: ${formData.email}, Phone: ${formData.phone}. Saya ingin konsultasi bisnis.`;
+    const whatsappMessage = `Halo RightNBig, saya ${formData.name}. Email: ${formData.email}, Phone: ${formData.phone}. Saya ingin konsultasi mengenai bisnis saya.`;
     const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(
       whatsappMessage
     )}`;
@@ -74,16 +79,10 @@ const Hero = () => {
               <button
                 className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors flex items-center justify-center space-x-2 text-lg font-semibold"
                 style={{ backgroundColor: "#02A345" }}
+                onClick={handleTransformasi}
               >
                 <span>Mulai Transformasi</span>
                 <ArrowRight size={20} />
-              </button>
-              <button
-                className="border-2 text-gray-900 px-8 py-4 rounded-lg hover:bg-white hover:text-red-700 transition-colors flex items-center justify-center space-x-2 text-lg font-semibold"
-                style={{ borderColor: "#996533", color: "#996533" }}
-              >
-                <Play size={20} />
-                <span>Tonton Video</span>
               </button>
             </div>
           </div>
@@ -143,7 +142,7 @@ const Hero = () => {
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="Telp*"
+                    placeholder="Whatsapp*"
                     required
                     value={formData.phone}
                     onChange={handleInputChange}
@@ -166,16 +165,7 @@ const Hero = () => {
             </form>
 
             {/* Stats Section */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-12 pt-8 border-t border-gray-200">
-              <div className="text-center">
-                <div
-                  className="text-3xl font-bold"
-                  style={{ color: "#02A345" }}
-                >
-                  500+
-                </div>
-                <div className="text-gray-600">Klien Bahagia</div>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-gray-200">
               <div className="text-center">
                 <div
                   className="text-3xl font-bold"

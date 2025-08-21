@@ -14,7 +14,7 @@ const Services = () => {
       icon: <Users style={{ color: "#02A345" }} size={48} />,
       title: "Business Training",
       description:
-        "Program pelatihan komprehensif yang dirancang khusus untuk meningkatkan keterampilan tim dan individu dalam berbagai aspek bisnis.",
+        "Program pelatihan komprehensif yang dirancang khusus untuk meningkatkan keterampilan tim dan individu dalam berbagai aspek kompetensi.",
       href: "/services/business-training", // Link to dedicated page
       id: "business-training",
     },
@@ -30,7 +30,7 @@ const Services = () => {
       icon: <TrendingUp style={{ color: "#02A345" }} size={48} />,
       title: "SME Empowerment",
       description:
-        "Program khusus untuk mengembangkan UMKM menjadi bisnis yang lebih besar dan berkelanjutan dengan strategi yang tepat.",
+        "Program khusus untuk UMKM menjadi naik kelas ke level bisnis yang semakin menjadi benar, menjadi besar.",
       href: "/services/sme-empowerment", // Updated to dedicated page
       id: "sme-empowerment",
     },
@@ -38,7 +38,7 @@ const Services = () => {
       icon: <User style={{ color: "#02A345" }} size={48} />,
       title: "Personal Mapping",
       description:
-        "Analisis mendalam tentang potensi, kekuatan, dan area pengembangan personal untuk mencapai kesuksesan yang berkelanjutan.",
+        "Pemetaan individu  untuk mengetahui potensi, kekuatan, kelemahan, dan area pengembangan di dalam berbagai aspek kehidupan.",
       href: "/services/personal-mapping", // Updated to dedicated page
       id: "personal-mapping",
     },
@@ -46,7 +46,7 @@ const Services = () => {
       icon: <Building style={{ color: "#02A345" }} size={48} />,
       title: "Business Consulting",
       description:
-        "Pemetaan strategis bisnis untuk mengidentifikasi peluang, tantangan, dan roadmap menuju pertumbuhan yang berkelanjutan.",
+        "Program pendampingan bisnis untuk membantu bisnis atau organisasi keluar dari permasalahan dan mengembangkan bisnis ke level yang lebih tinggi.",
       href: "/services/business-consulting", // Updated to dedicated page
       id: "business-consulting",
     },
@@ -54,11 +54,16 @@ const Services = () => {
       icon: <Briefcase style={{ color: "#02A345" }} size={48} />,
       title: "Management Services",
       description:
-        "Layanan konsultasi mendalam untuk membantu organisasi merumuskan strategi bisnis yang efektif dan implementasinya.",
+        "Layanan dalam membantu mengelola suatu fungsi dan proses bisnis agar berjalan optimal.",
       href: "/services/management-services", // Updated to dedicated page
       id: "management-services",
     },
   ];
+
+  const handleHubungiKami = () => {
+    const whatsappUrl = "https://wa.me/6281234567890";
+    window.open(whatsappUrl, "_blank");
+  };
 
   return (
     <div className="pt-32">
@@ -70,8 +75,8 @@ const Services = () => {
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Kami menyediakan berbagai layanan profesional untuk membantu
-              transformasi bisnis dan pengembangan personal Anda menuju
-              kesuksesan yang berkelanjutan.
+              transformasi bisnis dan pengembangan tim Anda menuju kesuksesan
+              yang berkelanjutan.
             </p>
           </div>
 
@@ -106,9 +111,10 @@ const Services = () => {
           <div className="text-center mt-12">
             <button
               className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors text-lg font-semibold"
+              onClick={handleHubungiKami}
               style={{ backgroundColor: "#02A345" }}
             >
-              Konsultasi Gratis Sekarang
+              Hubungi Kami Sekarang
             </button>
           </div>
         </div>

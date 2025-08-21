@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-2">
           {/* Company Info */}
-          <div className="space-y-6">
+          <div className="space-y-3">
             <div>
               <img
                 src="/images/rightnbig-logo.png"
@@ -24,16 +24,7 @@ const Footer = () => {
                 berkualitas tinggi untuk mencapai kesuksesan yang berkelanjutan.
               </p>
             </div>
-            <div className="flex space-x-6">
-              <a
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-3xl hover:text-gray-300 transition-colors flex items-center justify-center"
-                aria-label="Facebook"
-              >
-                <i className="fab fa-facebook fa-lg"></i>
-              </a>
+            <div className="flex space-x-6 py-2">
               <a
                 href="https://www.instagram.com/rightnbig/"
                 target="_blank"
@@ -53,13 +44,13 @@ const Footer = () => {
                 <i className="fab fa-youtube fa-lg"></i>
               </a>
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.tiktok.com/@rightnbig.id?is_from_webapp=1&sender_device=pc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white text-3xl hover:text-gray-300 transition-colors flex items-center justify-center"
-                aria-label="LinkedIn"
+                aria-label="Tiktok"
               >
-                <i className="fab fa-linkedin fa-lg"></i>
+                <i className="fa-brands fa-tiktok"></i>
               </a>
             </div>
           </div>
@@ -188,25 +179,11 @@ const Footer = () => {
                   <div className="flex items-start space-x-3">
                     <div className="text-gray-300 space-y-2">
                       <div>
-                        <h1 className="font-bold">Consulting Office:</h1>
-                        <p>Gedung Bina Sentra Lantai 3, room 303</p>
-                        <p>Kompleks Perkantoran Bidakara,</p>
+                        <h1 className="font-bold">Infinity Office:</h1>
+                        <p>Menara Cakrawala 12th Floor unit 5A,</p>
                         <p>
-                          Jl. Gatot Subroto No.8 Kavling 71, RT.8/RW.8, Menteng
-                          Dalam, Kec. Tebet, Kota Jakarta Selatan, Daerah Khusus
-                          Ibukota Jakarta 12870
-                        </p>
-                      </div>
-                      <div>
-                        <h1 className="font-bold mt-4">
-                          Administration Office:
-                        </h1>
-                        <p>
-                          Jl. Taman Pluit Kencana Blok P No. 28-F
-                          <br />
-                          Pluit, Penjaringan, Jakarta Utara 14450
-                          <br />
-                          Indonesia
+                          Jl. M.H. Thamrin No.Kav. 9, Kec. Menteng, Kota Jakarta
+                          Pusat, Daerah Khusus Ibu Kota Jakarta 10340
                         </p>
                       </div>
                     </div>
@@ -221,8 +198,8 @@ const Footer = () => {
                   size={20}
                 />
                 <div className="text-gray-300">
-                  <p>+62 21 1234 5678</p>
-                  <p>+62 812 3456 7890</p>
+                  <p>+62 819 7377 7723 (Rizky)</p>
+                  <p>+62 877 2257 7772 (Ibu Chandra)</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
@@ -232,7 +209,7 @@ const Footer = () => {
                   size={20}
                 />
                 <div className="text-gray-300">
-                  <p>info@rightnbig.id</p>
+                  <p>rightnbig@gmail.com</p>
                 </div>
               </div>
             </div>

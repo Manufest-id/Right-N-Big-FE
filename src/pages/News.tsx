@@ -1,5 +1,6 @@
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const News = () => {
   const newsItems = [
@@ -67,6 +68,7 @@ const News = () => {
 
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">

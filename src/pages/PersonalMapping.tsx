@@ -14,6 +14,7 @@ import {
   UserCheck,
   Zap,
 } from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const PersonalMapping = () => {
   const tests = [
@@ -452,6 +453,7 @@ const PersonalMapping = () => {
 
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           {/* Back Button */}
@@ -551,7 +553,7 @@ const PersonalMapping = () => {
               className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors text-lg font-semibold"
               style={{ backgroundColor: "#02A345" }}
             >
-              Konsultasi Gratis Sekarang
+              Hubungi Kami
             </Link>
           </div>
         </div>

@@ -7,7 +7,8 @@ import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [closeDropdownTimer, setCloseDropdownTimer] = useState<NodeJS.Timeout | null>(null);
+  const [closeDropdownTimer, setCloseDropdownTimer] =
+    useState<NodeJS.Timeout | null>(null);
   const location = useLocation();
 
   const navItems = [
@@ -40,6 +41,11 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const handleClickWhatsapp = () => {
+    const whatsappUrl = "https://wa.me/6281234567890";
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg">
       {/* Top Bar */}
@@ -51,11 +57,11 @@ const Header = () => {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Phone size={14} />
-              <span>+62 21 1234 5678</span>
+              <span>+62 819 7377 7723</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail size={14} />
-              <span>info@rightnbig.id</span>
+              <span>rightnbig@gmail.com</span>
             </div>
           </div>
           <div className="hidden md:block">
@@ -237,7 +243,7 @@ const Header = () => {
               className="text-white px-6 py-2 rounded-lg hover:opacity-90 transition-colors"
               style={{ backgroundColor: "#02A345" }}
             >
-              Konsultasi Gratis
+              Hubungi Kami
             </Link>
           </div>
 
@@ -258,9 +264,7 @@ const Header = () => {
               <Link
                 to="/"
                 className={`font-medium transition-colors ${
-                  isActive("/")
-                    ? ""
-                    : "text-gray-700 hover:text-green-600"
+                  isActive("/") ? "" : "text-gray-700 hover:text-green-600"
                 }`}
                 style={isActive("/") ? { color: "#02A345" } : {}}
                 onClick={() => setIsMenuOpen(false)}
@@ -272,9 +276,7 @@ const Header = () => {
               <Link
                 to="/about"
                 className={`font-medium transition-colors ${
-                  isActive("/about")
-                    ? ""
-                    : "text-gray-700 hover:text-green-600"
+                  isActive("/about") ? "" : "text-gray-700 hover:text-green-600"
                 }`}
                 style={isActive("/about") ? { color: "#02A345" } : {}}
                 onClick={() => setIsMenuOpen(false)}
@@ -323,9 +325,7 @@ const Header = () => {
               <Link
                 to="/team"
                 className={`font-medium transition-colors ${
-                  isActive("/team")
-                    ? ""
-                    : "text-gray-700 hover:text-green-600"
+                  isActive("/team") ? "" : "text-gray-700 hover:text-green-600"
                 }`}
                 style={isActive("/team") ? { color: "#02A345" } : {}}
                 onClick={() => setIsMenuOpen(false)}
@@ -337,9 +337,7 @@ const Header = () => {
               <Link
                 to="/news"
                 className={`font-medium transition-colors ${
-                  isActive("/news")
-                    ? ""
-                    : "text-gray-700 hover:text-green-600"
+                  isActive("/news") ? "" : "text-gray-700 hover:text-green-600"
                 }`}
                 style={isActive("/news") ? { color: "#02A345" } : {}}
                 onClick={() => setIsMenuOpen(false)}
@@ -367,7 +365,7 @@ const Header = () => {
                 style={{ backgroundColor: "#02A345" }}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Konsultasi Gratis
+                Hubungi Kami
               </Link>
             </div>
           </div>

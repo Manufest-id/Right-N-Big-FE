@@ -3,6 +3,7 @@
 import type React from "react";
 import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -36,8 +37,20 @@ const Contact = () => {
     window.open(whatsappUrl, "_blank");
   };
 
+  const handleClickWhatsapp = () => {
+    const whatsappUrl = "https://wa.me/6281234567890";
+    window.open(whatsappUrl, "_blank");
+  };
+
+  const handleClickEmailKami = () => {
+    const mailUrl =
+      "https://mail.google.com/mail/?view=cm&fs=1&to=rightnbig@gmail.com";
+    window.open(mailUrl, "_blank");
+  };
+
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -69,9 +82,11 @@ const Contact = () => {
                         Alamat Kantor
                       </h4>
                       <p className="text-gray-600">
-                        Jl. Sudirman No. 123, Lantai 15
+                        Menara Cakrawala 12th Floor unit 5A
                         <br />
-                        Jakarta Pusat 10220
+                        Jl. M.H. Thamrin No.Kav. 9, Kec. Menteng
+                        <br />
+                        Jakarta Pusat 10340
                         <br />
                         Indonesia
                       </p>
@@ -88,9 +103,9 @@ const Contact = () => {
                       <h4 className="font-semibold text-gray-900 mb-1">
                         Telepon
                       </h4>
-                      <p className="text-gray-600">+62 21 1234 5678</p>
+                      <p className="text-gray-600">+62 819 7377 7723 (Rizky)</p>
                       <p className="text-gray-600">
-                        +62 812 3456 7890 (WhatsApp)
+                        +62 877-2257-7772 (Ibu Chandra)
                       </p>
                     </div>
                   </div>
@@ -105,8 +120,7 @@ const Contact = () => {
                       <h4 className="font-semibold text-gray-900 mb-1">
                         Email
                       </h4>
-                      <p className="text-gray-600">info@rightnbig.id</p>
-                      <p className="text-gray-600">coaching@rightnbig.id</p>
+                      <p className="text-gray-600">rightnbig@gmail.com</p>
                     </div>
                   </div>
 
@@ -136,13 +150,17 @@ const Contact = () => {
                   Kontak Cepat
                 </h4>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2">
+                  <button
+                    className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center space-x-2"
+                    onClick={handleClickWhatsapp}
+                  >
                     <MessageCircle size={20} />
                     <span>WhatsApp</span>
                   </button>
                   <button
                     className="text-white px-6 py-3 rounded-lg hover:opacity-90 transition-colors flex items-center justify-center space-x-2"
                     style={{ backgroundColor: "#02A345" }}
+                    onClick={handleClickEmailKami}
                   >
                     <Mail size={20} />
                     <span>Email Kami</span>
@@ -156,15 +174,6 @@ const Contact = () => {
                   Ikuti Kami
                 </h4>
                 <div className="flex items-center space-x-8 mb-7 mt-7 overflow-visible">
-                  <a
-                    href="https://www.facebook.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-900 text-4xl hover:text-green-600 transition-colors flex items-center justify-center"
-                    aria-label="Facebook"
-                  >
-                    <i className="fab fa-facebook fa-lg"></i>
-                  </a>
                   <a
                     href="https://www.instagram.com/rightnbig/"
                     target="_blank"
@@ -184,13 +193,13 @@ const Contact = () => {
                     <i className="fab fa-youtube fa-lg"></i>
                   </a>
                   <a
-                    href="https://www.linkedin.com/"
+                    href="https://www.tiktok.com/@rightnbig.id?is_from_webapp=1&sender_device=pc"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-900 text-4xl hover:text-green-600 transition-colors flex items-center justify-center"
-                    aria-label="LinkedIn"
+                    aria-label="Tiktok"
                   >
-                    <i className="fab fa-linkedin fa-lg"></i>
+                    <i className="fa-brands fa-tiktok"></i>
                   </a>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">
@@ -362,7 +371,7 @@ const Contact = () => {
             <div className="bg-gray-200 h-64 rounded-2xl overflow-hidden flex items-center justify-center">
               <iframe
                 title="Lokasi Kantor RightNBig"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.8041212603364!2d106.8361743!3d-6.2405536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3c09a50f251%3A0x5af4d685e6ce6735!2sBina%20Sentra!5e0!3m2!1sen!2sid!4v1719312345678!5m2!1sen!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.586702855057!2d106.82123767414764!3d-6.186026143801499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5f2a2b7c0b1%3A0x460c029eefb0ae91!2sInfiniti%20Office%20-%20Sarinah%20Thamrin!5e0!3m2!1sen!2sid!4v1755448235022!5m2!1sen!2sid"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

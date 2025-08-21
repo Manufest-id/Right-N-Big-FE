@@ -1,10 +1,19 @@
-"use client"
+"use client";
 
-import { useParams, Link } from "react-router-dom"
-import { Calendar, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from "lucide-react"
+import { useParams, Link } from "react-router-dom";
+import {
+  Calendar,
+  User,
+  ArrowLeft,
+  Share2,
+  Facebook,
+  Twitter,
+  Linkedin,
+} from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const NewsDetail = () => {
-  const { id } = useParams()
+  const { id } = useParams();
 
   const newsArticles = [
     {
@@ -237,7 +246,8 @@ const NewsDetail = () => {
     {
       id: "6",
       title: "Tips Membangun Personal Brand yang Kuat",
-      excerpt: "Panduan lengkap untuk membangun personal brand yang autentik dan berdampak dalam dunia bisnis modern.",
+      excerpt:
+        "Panduan lengkap untuk membangun personal brand yang autentik dan berdampak dalam dunia bisnis modern.",
       image: "/images/news/personalbranding.jpg",
       date: "25 Desember 2023",
       author: "Yosephine Lim",
@@ -328,16 +338,20 @@ const NewsDetail = () => {
         <p>Untuk konsultasi personal branding lebih lanjut, RightNBig menyediakan program Personal Mapping yang dapat membantu Anda mengidentifikasi dan mengembangkan personal brand yang kuat.</p>
       `,
     },
-  ]
+  ];
 
-  const article = newsArticles.find((article) => article.id === id)
+  const article = newsArticles.find((article) => article.id === id);
 
   if (!article) {
     return (
       <div className="pt-32 min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Artikel Tidak Ditemukan</h1>
-          <p className="text-gray-600 mb-8">Maaf, artikel yang Anda cari tidak dapat ditemukan.</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            Artikel Tidak Ditemukan
+          </h1>
+          <p className="text-gray-600 mb-8">
+            Maaf, artikel yang Anda cari tidak dapat ditemukan.
+          </p>
           <Link
             to="/news"
             className="text-white px-6 py-3 rounded-lg hover:opacity-90 transition-colors"
@@ -347,11 +361,12 @@ const NewsDetail = () => {
           </Link>
         </div>
       </div>
-    )
+    );
   }
 
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <article className="py-12 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           {/* Back Button */}
@@ -373,7 +388,9 @@ const NewsDetail = () => {
                 {article.category}
               </span>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">{article.title}</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              {article.title}
+            </h1>
             <div className="flex items-center space-x-6 text-gray-600 mb-6">
               <div className="flex items-center space-x-2">
                 <Calendar size={18} />
@@ -411,7 +428,9 @@ const NewsDetail = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
                 <Share2 size={20} className="text-gray-600" />
-                <span className="text-gray-600 font-semibold">Bagikan artikel ini:</span>
+                <span className="text-gray-600 font-semibold">
+                  Bagikan artikel ini:
+                </span>
                 <div className="flex space-x-3">
                   <button className="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700 transition-colors">
                     <Facebook size={16} />
@@ -429,7 +448,9 @@ const NewsDetail = () => {
 
           {/* Related Articles */}
           <div className="mt-16">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Artikel Terkait</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">
+              Artikel Terkait
+            </h3>
             <div className="grid md:grid-cols-2 gap-8">
               {newsArticles
                 .filter((item) => item.id !== id)
@@ -457,7 +478,9 @@ const NewsDetail = () => {
                       <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
                         {relatedArticle.title}
                       </h4>
-                      <p className="text-gray-600 text-sm">{relatedArticle.excerpt}</p>
+                      <p className="text-gray-600 text-sm">
+                        {relatedArticle.excerpt}
+                      </p>
                     </div>
                   </Link>
                 ))}
@@ -466,7 +489,7 @@ const NewsDetail = () => {
         </div>
       </article>
     </div>
-  )
-}
+  );
+};
 
-export default NewsDetail
+export default NewsDetail;

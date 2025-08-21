@@ -1,4 +1,5 @@
-import { Linkedin, Mail, Phone } from "lucide-react"
+import { Linkedin, Mail, Phone } from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Team = () => {
   const teamMembers = [
@@ -65,17 +66,25 @@ const Team = () => {
       description:
         "Senior Tim Creative at Right n Big Coaching & Consulting. Content Creator Trainer & Consultant. Professional Photographer & Videographer. Digital Marketing Consultant. Social Media Specialist.",
     },
-  ]
+  ];
+
+  const handleHubungiKami = () => {
+    const whatsappUrl = "https://wa.me/6281234567890";
+    window.open(whatsappUrl, "_blank");
+  };
 
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">Tim Ahli Kami</h1>
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              Tim Ahli Kami
+            </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Bertemu dengan tim profesional yang berpengalaman dan berkomitmen membantu kesuksesan transformasi bisnis
-              dan pengembangan diri Anda
+              Bertemu dengan tim profesional yang berpengalaman dan berkomitmen
+              membantu kesuksesan transformasi bisnis dan pengembangan diri Anda
             </p>
           </div>
 
@@ -89,7 +98,7 @@ const Team = () => {
                   <img
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
-                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-80 object-contain group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -107,11 +116,18 @@ const Team = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <p className="font-semibold mb-3" style={{ color: "#02A345" }}>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {member.name}
+                  </h3>
+                  <p
+                    className="font-semibold mb-3"
+                    style={{ color: "#02A345" }}
+                  >
                     {member.position}
                   </p>
-                  <p className="text-gray-600 leading-relaxed text-sm">{member.description}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    {member.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -121,6 +137,7 @@ const Team = () => {
             <button
               className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors text-lg font-semibold"
               style={{ backgroundColor: "#02A345" }}
+              onClick={handleHubungiKami}
             >
               Konsultasi dengan Tim Kami
             </button>
@@ -128,7 +145,7 @@ const Team = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Team
+export default Team;

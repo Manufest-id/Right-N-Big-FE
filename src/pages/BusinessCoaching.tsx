@@ -9,6 +9,7 @@ import {
   Lightbulb,
   TrendingUp,
 } from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const BusinessCoaching = () => {
   const programs = [
@@ -18,7 +19,7 @@ const BusinessCoaching = () => {
       subtitle: "“From Target to Advocate”",
       description:
         "Program coaching kolaborasi yang efektif antara tim sales & tim marketing untuk bersama-sama mencapai target penjualan.",
-      image: "/images/coaching/futurefit.jpg",
+      image: "/images/coaching/futurefit2.png",
       details: [
         {
           label: "Peserta",
@@ -108,6 +109,7 @@ const BusinessCoaching = () => {
 
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           {/* Back Button */}
@@ -250,7 +252,7 @@ const BusinessCoaching = () => {
               className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors text-lg font-semibold"
               style={{ backgroundColor: "#02A345" }}
             >
-              Konsultasi Gratis Sekarang
+              Hubungi Kami
             </Link>
           </div>
         </div>

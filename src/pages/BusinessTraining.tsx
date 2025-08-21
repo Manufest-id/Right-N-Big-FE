@@ -13,6 +13,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 import * as React from "react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const BusinessTraining = () => {
   type Program = {
@@ -27,6 +28,7 @@ const BusinessTraining = () => {
     acronym?: { letter: string; word: string; description: string }[];
     quote?: string;
     concepts?: { name: string; description: string; icon: React.JSX.Element }[];
+    moduleOverview?: string[];
     values?: string[];
     programName?: string;
   };
@@ -36,7 +38,7 @@ const BusinessTraining = () => {
       title: "REVOLUTION SALES",
       description:
         "Pelatihan komprehensif bagi tenaga penjual (salesman) yang berorientasi target dengan pelayanan yang prima.",
-      image: "/images/training/business-training.jpg",
+      image: "/images/training/business-training2.jpg",
       details: [
         {
           label: "Peserta",
@@ -53,12 +55,24 @@ const BusinessTraining = () => {
         "Pelatihan ini dirancang untuk membekali tenaga penjual dengan strategi dan teknik penjualan mutakhir, fokus pada pencapaian target dan pelayanan pelanggan yang unggul.",
         "Materi meliputi negosiasi, penanganan keberatan, membangun hubungan jangka panjang dengan klien, dan optimalisasi proses penjualan.",
       ],
+      moduleOverview: [
+        "Sales Mindset & Purpose",
+        "Build a sustain & mutual partnership with Value Added",
+        "Powered Personality",
+        "Effective Communication in Selling & Negotiation",
+        "Task & Time Management",
+        "Sales Funelling",
+        "Winning Sales Strategy",
+        "Selling Process Simulation",
+        "Rejection Management & Critical Selling Skills",
+        "Sales Presentation & Appereance",
+      ],
     },
     {
       id: "leadership",
       title: "MID LEADERSHIP",
       description: "Pelatihan kepemimpinan untuk pemimpin level menengah.",
-      image: "/images/training/mid-leadership.jpg",
+      image: "/images/training/mid-leadership1.jpeg",
       details: [
         {
           label: "Peserta",
@@ -219,13 +233,14 @@ const BusinessTraining = () => {
         "Kejujuran",
         "Integritas",
       ],
-      programName: "JOY of Working (GRACE)",
+      programName: "GRACE: Gratitude, Reward, Appreciate, Challenge, Enjoy",
       content: [],
     },
   ];
 
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           {/* Back Button */}
@@ -256,6 +271,11 @@ const BusinessTraining = () => {
                 className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg object-cover h-64"
               />
             </div>
+            <p className="text-xl text-gray-600 max-w-xl mx-auto mt-10">
+              Kami sangat senang jika kami dapat membantu anda dengan modul
+              modul training yang khusus kami buat untuk kebutuhan team dan
+              perusahaan anda.
+            </p>
           </div>
 
           {/* Individual Program Sections */}
@@ -361,6 +381,35 @@ const BusinessTraining = () => {
                     </div>
                   )}
 
+                  {program.moduleOverview && (
+                    <div className="mt-6">
+                      <h4 className="text-xl font-bold text-gray-900 mb-3">
+                        Module Overview
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {program.moduleOverview.map((value, idx) => (
+                          <span
+                            key={idx}
+                            className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium"
+                          >
+                            {`${idx + 1}. ${value}`}
+                          </span>
+                        ))}
+                      </div>
+                      {program.programName && (
+                        <p className="text-gray-700 mt-4">
+                          Program:{" "}
+                          <span
+                            className="font-semibold"
+                            style={{ color: "#996533" }}
+                          >
+                            {program.programName}
+                          </span>
+                        </p>
+                      )}
+                    </div>
+                  )}
+
                   {program.values && (
                     <div className="mt-6">
                       <h4 className="text-xl font-bold text-gray-900 mb-3">
@@ -417,7 +466,7 @@ const BusinessTraining = () => {
               className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors text-lg font-semibold"
               style={{ backgroundColor: "#02A345" }}
             >
-              Konsultasi Gratis Sekarang
+              Hubungi Kami
             </Link>
           </div>
         </div>

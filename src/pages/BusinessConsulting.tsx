@@ -16,6 +16,7 @@ import {
   UserCheck,
   Zap,
 } from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const BusinessConsulting = () => {
   const packages = [
@@ -24,7 +25,7 @@ const BusinessConsulting = () => {
       title: "SILVER PACKAGE",
       description:
         "Jasa konsultan bisnis untuk menangani satu topik tertentu (khusus) dalam bisnis yang memerlukan perhatian khusus atau membutuhkan solusi dan pemecahan masalah.",
-      image: "/images/consulting/silver-package.jpg",
+      image: "/images/consulting/silver-package2.jpg",
       consultant: "1 orang Senior Consultant (specialized)",
       duration: "2 mandays per month, 6 jam/day (total 12 hour/ month)",
       topics: [
@@ -141,6 +142,7 @@ const BusinessConsulting = () => {
 
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           {/* Back Button */}
@@ -261,7 +263,7 @@ const BusinessConsulting = () => {
               className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors text-lg font-semibold"
               style={{ backgroundColor: "#02A345" }}
             >
-              Konsultasi Gratis Sekarang
+              Hubungi Kami
             </Link>
           </div>
         </div>

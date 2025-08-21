@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FileText, Clock, ArrowLeft } from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const ManagementServices = () => {
   const salesMarketingDetails = {
@@ -32,6 +33,7 @@ const ManagementServices = () => {
 
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           {/* Back Button */}
@@ -119,7 +121,7 @@ const ManagementServices = () => {
               </div>
               <div className="order-1 lg:order-2">
                 <img
-                  src="/images/management-services/sales-and-marketing.jpg"
+                  src="/images/management-services/sales-and-marketing2.jpg"
                   alt={salesMarketingDetails.title}
                   className="w-full h-72 object-cover rounded-2xl shadow-md"
                 />
@@ -137,7 +139,7 @@ const ManagementServices = () => {
               className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors text-lg font-semibold"
               style={{ backgroundColor: "#02A345" }}
             >
-              Konsultasi Gratis Sekarang
+              Hubungi Kami
             </Link>
           </div>
         </div>

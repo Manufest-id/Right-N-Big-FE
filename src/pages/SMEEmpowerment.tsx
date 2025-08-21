@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, Users, Clock } from "lucide-react";
+import { ArrowLeft, Users, Clock, Dot } from "lucide-react";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const SMEEmpowerment = () => {
   const programs = [
     {
       id: "umkm-intensive",
-      title: "UMKM INTENSIVE TRAINING & COACHING PROGRAM",
+      title: "UMKM INTENSIVE TRAINING & COACHING",
       description:
         "Pelatihan bagi para pelaku UMKM menuju UMKM Naik Kelas dengan sebuah kombinasi program pelatihan dan pendampingan bisnis yang terarah dan terukur.",
       image: "/images/sme/umkm-intensive.jpg",
@@ -27,13 +28,40 @@ const SMEEmpowerment = () => {
           icon: <Clock size={20} style={{ color: "#02A345" }} />,
         },
       ],
+      module: [
+        {
+          name: "Hybrid",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Ilmu terapan yang sangat aplikatif (70% Hard Skills)",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Selalu ada penugasan di setiap sesi terkait materi (Google Drive)",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Proses mentoring one on one melalui WA/Telegram/Zoom selama durasi pembelajaran (limited)",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Journal dan KPI personal (mingguan & global)",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Program pelatihan selama 16 minggu tetapi pendampingan akan terus dilayani",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+      ],
     },
     {
       id: "mentor-umkm",
-      title: "MENTOR UMKM TRAINING & COACHING",
+      title:
+        "MENTOR: UMKM TRAINING MODUL, PEMETAAN BISNIS, MENTORING EFFECTIVE, IDENTIFIKASI MASALAH & SOLUSI",
       description:
         "Sebuah pelatihan yang ditujukan bagi pelaku usaha UMKM yang sudah naik kelas dan memiliki kerinduan untuk menjadi penolong sebagai mentor bagi pelaku-pelaku UMKM lainnya agar semakin banyak UMKM yang naik kelas.",
-      image: "/images/sme/mentor-umkm.jpg",
+      image: "/images/sme/mentor-umkm2.jfif",
       details: [
         {
           label: "Peserta",
@@ -47,11 +75,13 @@ const SMEEmpowerment = () => {
           icon: <Clock size={20} style={{ color: "#02A345" }} />,
         },
       ],
+      module: [],
     },
   ];
 
   return (
     <div className="pt-32">
+      <ScrollToTop />
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           {/* Back Button */}
@@ -117,6 +147,25 @@ const SMEEmpowerment = () => {
                       ))}
                     </div>
                   )}
+
+                  {program.module && (
+                    <div className="space-y-3">
+                      <h1 className="text-2xl font-bold text-gray-700 mt-10">
+                        Metode Pelatihan dan Pendampingan:
+                      </h1>
+                      {program.module.map((module, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center space-x-3 text-gray-700"
+                        >
+                          {module.icon}
+                          <span>
+                            <span>{module.name}</span>{" "}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className="order-1 lg:order-2">
                   <img
@@ -138,7 +187,7 @@ const SMEEmpowerment = () => {
               className="text-white px-8 py-4 rounded-lg hover:opacity-90 transition-colors text-lg font-semibold"
               style={{ backgroundColor: "#02A345" }}
             >
-              Konsultasi Gratis Sekarang
+              Hubungi Kami
             </Link>
           </div>
         </div>
