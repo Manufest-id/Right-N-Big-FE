@@ -9,58 +9,35 @@ import {
   Users,
 } from "lucide-react";
 
+// Define the Event type
+interface Event {
+  id: string;
+  image?: string;
+  title: string;
+  description: string;
+  date: string;
+  location: string;
+  participants: string;
+}
+
 const EventSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const events = [
-    {
-      id: 1,
-      title: "Leadership Excellence Workshop",
-      date: "15 Februari 2024",
-      location: "Jakarta Convention Center",
-      participants: "50 peserta",
-      image: "/images/events/leadership-workshop2.jpg",
-      description:
-        "Workshop intensif untuk mengembangkan kemampuan kepemimpinan yang efektif di era digital modern",
-    },
-    {
-      id: 2,
-      title: "UMKM Naik Kelas Bootcamp",
-      date: "22 Februari 2024",
-      location: "Surabaya Business Center",
-      participants: "100 peserta",
-      image: "/images/events/umkmnaikkelas.jpg",
-      description:
-        "Program komprehensif untuk mengembangkan UMKM menjadi bisnis yang lebih besar dan berkelanjutan",
-    },
-    {
-      id: 3,
-      title: "Personal Branding Masterclass",
-      date: "1 Maret 2024",
-      location: "Bandung Creative Hub",
-      participants: "75 peserta",
-      image: "/images/events/personal-branding.jpg",
-      description:
-        "Membangun personal brand yang kuat untuk kesuksesan karir dan bisnis di era digital",
-    },
-    {
-      id: 4,
-      title: "Business Mapping",
-      date: "By Appointment",
-      location: "Online / Onsite",
-      participants: "3- 5 peserta",
-      image: "/images/events/business-mapping.jpg",
-      description:
-        "Workshop intensif untuk mengembangkan kemampuan kepemimpinan yang efektif di era digital modern",
-    },
-  ];
+  const [events, setEvents] = useState<Event[]>([]);
 
   useEffect(() => {
+    fetch("/events.json")
+      .then((res) => res.json())
+      .then((data: Event[]) => setEvents(data))
+      .catch((err) => console.error("Failed to load events:", err));
+  }, []);
+
+  useEffect(() => {
+    if (events.length === 0) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % events.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [events.length]);
+  }, [events]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % events.length);
@@ -74,6 +51,14 @@ const EventSlider = () => {
     const whatsappUrl = "https://wa.me/6281234567890";
     window.open(whatsappUrl, "_blank");
   };
+
+  if (events.length === 0) {
+    return (
+      <section className="py-20 bg-white">
+        <div className="text-center text-gray-500">Loading events...</div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-20 bg-white">

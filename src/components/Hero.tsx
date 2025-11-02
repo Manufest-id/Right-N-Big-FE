@@ -163,37 +163,6 @@ const Hero = () => {
                 </div>
               </div>
             </form>
-
-            {/* Stats Section */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-gray-200">
-              <div className="text-center">
-                <div
-                  className="text-3xl font-bold"
-                  style={{ color: "#02A345" }}
-                >
-                  50+
-                </div>
-                <div className="text-gray-600">Program Training</div>
-              </div>
-              <div className="text-center">
-                <div
-                  className="text-3xl font-bold"
-                  style={{ color: "#02A345" }}
-                >
-                  15+
-                </div>
-                <div className="text-gray-600">Tahun Pengalaman</div>
-              </div>
-              <div className="text-center">
-                <div
-                  className="text-3xl font-bold"
-                  style={{ color: "#02A345" }}
-                >
-                  98%
-                </div>
-                <div className="text-gray-600">Tingkat Kepuasan</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

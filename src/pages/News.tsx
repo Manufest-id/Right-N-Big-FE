@@ -1,70 +1,48 @@
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 
+// ✅ Define Article type
+type Article = {
+  id: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  date: string;
+  author: string;
+  category: string;
+};
+
 const News = () => {
-  const newsItems = [
-    {
-      id: "1",
-      title: "RightNBig Meluncurkan Program UMKM Naik Kelas 2024",
-      excerpt:
-        "Program terbaru untuk membantu UMKM Indonesia berkembang menjadi bisnis yang lebih besar dan berkelanjutan.",
-      image: "/images/news/umkm.jpg",
-      date: "15 Januari 2024",
-      author: "Tony Chen",
-      category: "Program Baru",
-    },
-    {
-      id: "2",
-      title: "Kesuksesan Workshop Leadership Excellence di Jakarta",
-      excerpt:
-        "Lebih dari 200 peserta mengikuti workshop leadership yang diselenggarakan di Jakarta Convention Center.",
-      image: "/images/news/leadership.jpg",
-      date: "10 Januari 2024",
-      author: "Julian Foe",
-      category: "Event",
-    },
-    {
-      id: "3",
-      title: "Kolaborasi dengan Universitas Terkemuka untuk Program Magang",
-      excerpt:
-        "RightNBig menjalin kerjasama dengan beberapa universitas untuk program magang mahasiswa di bidang business coaching.",
-      image: "/images/news/university.jpg",
-      date: "5 Januari 2024",
-      author: "Fransisca Diwanti",
-      category: "Kerjasama",
-    },
-    {
-      id: "4",
-      title: "Pencapaian 500+ Klien Bahagia di Tahun 2023",
-      excerpt:
-        "RightNBig menutup tahun 2023 dengan pencapaian luar biasa, melayani lebih dari 500 klien dengan tingkat kepuasan 98%.",
-      image: "/images/news/happyclient.jpg",
-      date: "30 Desember 2023",
-      author: "Amanda Putri",
-      category: "Pencapaian",
-    },
-    {
-      id: "5",
-      title: "Tren Business Coaching di Indonesia 2024",
-      excerpt:
-        "Analisis mendalam tentang perkembangan industri business coaching di Indonesia dan prediksi untuk tahun 2024.",
-      image: "/images/news/coaching.jpg",
-      date: "28 Desember 2023",
-      author: "Rudy Handoko",
-      category: "Insight",
-    },
-    {
-      id: "6",
-      title: "Tips Membangun Personal Brand yang Kuat",
-      excerpt:
-        "Panduan lengkap untuk membangun personal brand yang autentik dan berdampak dalam dunia bisnis modern.",
-      image: "/images/news/personalbranding.jpg",
-      date: "25 Desember 2023",
-      author: "Yosephine Lim",
-      category: "Tips",
-    },
-  ];
+  const [newsItems, setNewsItems] = useState<Article[]>([]);
+
+  useEffect(() => {
+    fetch("/news.json")
+      .then((res) => res.json())
+      .then((data: Article[]) => setNewsItems(data))
+      .catch((err) => console.error("Failed to fetch news:", err));
+  }, []);
+
+  if (!newsItems || newsItems.length === 0) {
+    return (
+      <div className="pt-32">
+        <ScrollToTop />
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                Berita & Artikel
+              </h1>
+              <p className="text-xl text-gray-600">
+                Tidak ada berita untuk ditampilkan saat ini.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="pt-32">
@@ -83,55 +61,57 @@ const News = () => {
 
           <div className="grid lg:grid-cols-3 gap-8">
             {/* Featured Article */}
-            <div className="lg:col-span-2">
-              <Link
-                to={`/news/${newsItems[0].id}`}
-                className="block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="relative">
-                  <img
-                    src={newsItems[0].image || "/placeholder.svg"}
-                    alt={newsItems[0].title}
-                    className="w-full h-64 lg:h-80 object-cover"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span
-                      className="text-white px-3 py-1 rounded-full text-sm font-semibold"
-                      style={{ backgroundColor: "#02A345" }}
-                    >
-                      {newsItems[0].category}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 hover:text-green-600 transition-colors">
-                    {newsItems[0].title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6 text-lg">
-                    {newsItems[0].excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4 text-sm text-gray-500">
-                      <div className="flex items-center space-x-2">
-                        <Calendar size={16} />
-                        <span>{newsItems[0].date}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <User size={16} />
-                        <span>{newsItems[0].author}</span>
-                      </div>
-                    </div>
-                    <div
-                      className="font-semibold hover:opacity-80 transition-colors flex items-center space-x-2"
-                      style={{ color: "#02A345" }}
-                    >
-                      <span>Baca Selengkapnya</span>
-                      <ArrowRight size={16} />
+            {newsItems[0] && (
+              <div className="lg:col-span-2">
+                <Link
+                  to={`/news/${newsItems[0].id}`}
+                  className="block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="relative">
+                    <img
+                      src={newsItems[0].image || "/placeholder.svg"}
+                      alt={newsItems[0].title}
+                      className="w-full h-64 lg:h-80 object-cover"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span
+                        className="text-white px-3 py-1 rounded-full text-sm font-semibold"
+                        style={{ backgroundColor: "#02A345" }}
+                      >
+                        {newsItems[0].category}
+                      </span>
                     </div>
                   </div>
-                </div>
-              </Link>
-            </div>
+                  <div className="p-8">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 hover:text-green-600 transition-colors">
+                      {newsItems[0].title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-6 text-lg">
+                      {newsItems[0].excerpt}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-4 text-sm text-gray-500">
+                        <div className="flex items-center space-x-2">
+                          <Calendar size={16} />
+                          <span>{newsItems[0].date}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <User size={16} />
+                          <span>{newsItems[0].author}</span>
+                        </div>
+                      </div>
+                      <div
+                        className="font-semibold hover:opacity-80 transition-colors flex items-center space-x-2"
+                        style={{ color: "#02A345" }}
+                      >
+                        <span>Baca Selengkapnya</span>
+                        <ArrowRight size={16} />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            )}
 
             {/* Sidebar Articles */}
             <div className="space-y-6">

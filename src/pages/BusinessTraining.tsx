@@ -266,7 +266,7 @@ const BusinessTraining = () => {
             </p>
             <div className="mt-8">
               <img
-                src="/images/training/business-training.jpg"
+                src="/images/training/business-training-hero.png"
                 alt="Business Training Overview"
                 className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg object-cover h-64"
               />

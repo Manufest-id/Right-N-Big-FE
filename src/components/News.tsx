@@ -1,68 +1,49 @@
-import { Calendar, User, ArrowRight } from "lucide-react"
-import { Link } from "react-router-dom"
+import { Calendar, User, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+interface NewsItem {
+  id: string;
+  title: string;
+  excerpt: string;
+  image: string;
+  date: string;
+  author: string;
+  category: string;
+}
 
 const News = () => {
-  const newsItems = [
-    {
-      id: "1",
-      title: "RightNBig Meluncurkan Program UMKM Naik Kelas 2024",
-      excerpt:
-        "Program terbaru untuk membantu UMKM Indonesia berkembang menjadi bisnis yang lebih besar dan berkelanjutan.",
-      image: "/images/news/umkm.jpg",
-      date: "15 Januari 2024",
-      author: "Tony Chen",
-      category: "Program Baru",
-    },
-    {
-      id: "2",
-      title: "Kesuksesan Workshop Leadership Excellence di Jakarta",
-      excerpt:
-        "Lebih dari 200 peserta mengikuti workshop leadership yang diselenggarakan di Jakarta Convention Center.",
-      image: "/images/news/leadership.jpg",
-      date: "10 Januari 2024",
-      author: "Julian Foe",
-      category: "Event",
-    },
-    {
-      id: "3",
-      title: "Kolaborasi dengan Universitas Terkemuka untuk Program Magang",
-      excerpt:
-        "RightNBig menjalin kerjasama dengan beberapa universitas untuk program magang mahasiswa di bidang business coaching.",
-      image: "/images/news/university.jpg",
-      date: "5 Januari 2024",
-      author: "Fransisca Diwanti",
-      category: "Kerjasama",
-    },
-    {
-      id: "4",
-      title: "Pencapaian 500+ Klien Bahagia di Tahun 2023",
-      excerpt:
-        "RightNBig menutup tahun 2023 dengan pencapaian luar biasa, melayani lebih dari 500 klien dengan tingkat kepuasan 98%.",
-      image: "/images/news/happyclient.jpg",
-      date: "30 Desember 2023",
-      author: "Amanda Putri",
-      category: "Pencapaian",
-    },
-    {
-      id: "5",
-      title: "Tren Business Coaching di Indonesia 2024",
-      excerpt:
-        "Analisis mendalam tentang perkembangan industri business coaching di Indonesia dan prediksi untuk tahun 2024.",
-      image: "/images/news/coaching.jpg",
-      date: "28 Desember 2023",
-      author: "Rudy Handoko",
-      category: "Insight",
-    },
-    {
-      id: "6",
-      title: "Tips Membangun Personal Brand yang Kuat",
-      excerpt: "Panduan lengkap untuk membangun personal brand yang autentik dan berdampak dalam dunia bisnis modern.",
-      image: "/images/news/personalbranding.jpg",
-      date: "25 Desember 2023",
-      author: "Yosephine Lim",
-      category: "Tips",
-    },
-  ]
+  const [newsItems, setNewsItems] = useState<NewsItem[]>([]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      try {
+        const response = await fetch("/news.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch news data");
+        }
+        const data = await response.json();
+        setNewsItems(data);
+      } catch (error) {
+        console.error("Error fetching news:", error);
+      }
+    };
+
+    fetchNews();
+  }, []);
+
+  if (!newsItems || newsItems.length === 0) {
+    return (
+      <section id="news" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Berita & Artikel</h2>
+            <p className="text-xl text-gray-600">Tidak ada berita untuk ditampilkan saat ini.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="news" className="py-20 bg-gray-50">
@@ -206,7 +187,7 @@ const News = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default News
+export default News;

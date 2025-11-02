@@ -167,7 +167,7 @@ const BusinessConsulting = () => {
             </p>
             <div className="mt-8">
               <img
-                src="/images/consulting/business-consulting.jpg"
+                src="/images/consulting/business-consulting.png"
                 alt="Business Consulting Overview"
                 className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg object-cover h-64"
               />

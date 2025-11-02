@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Business Mapping",
+    "date": "By Appointment",
+    "location": "Online / Onsite",
+    "participants": "3-5 peserta",
+    "image": "/images/events/business-mapping.jpg",
+    "description": "Workshop intensif untuk mengembangkan kemampuan kepemimpinan yang efektif di era digital modern"
+  },
+  {
+    "id": 2,
+    "title": "Mahasiswa IPK 2,4 Milyar ITPRENEUR",
+    "date": "31 Agustus 2025",
+    "location": "YESCOM Showroom",
+    "participants": "50 peserta",
+    "image": "/images/events/itpreneur.jpg",
+    "description": "Ikuti program bisnis eksklusif dari ITPreneur yang membuka peluang bagi mahasiswa untuk meraih kesuksesan di dunia IT dan kewirausahaan. Dapatkan lisensi ITPreneur, peluang karier, sistem bisnis gratis."
+  },
+  {
+    "id": 3,
+    "title": "Leadership Excellence Workshop",
+    "date": "15 Februari 2024",
+    "location": "Jakarta Convention Center",
+    "participants": "50 peserta",
+    "image": "/images/events/leadership-workshop2.jpg",
+    "description": "Workshop intensif untuk mengembangkan kemampuan kepemimpinan yang efektif di era digital modern"
+  },
+  {
+    "id": 4,
+    "title": "UMKM Naik Kelas Bootcamp",
+    "date": "22 Februari 2024",
+    "location": "Surabaya Business Center",
+    "participants": "100 peserta",
+    "image": "/images/events/umkmnaikkelas.jpg",
+    "description": "Program komprehensif untuk mengembangkan UMKM menjadi bisnis yang lebih besar dan berkelanjutan"
+  }
+]
