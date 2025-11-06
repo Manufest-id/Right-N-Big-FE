@@ -12,11 +12,11 @@ const Services = () => {
   const services = [
     {
       icon: <Users style={{ color: "#02A345" }} size={48} />,
-      title: "Business Training",
+      title: "Sales Revolution",
       description:
         "Program pelatihan komprehensif yang dirancang khusus untuk meningkatkan keterampilan tim dan individu dalam berbagai aspek kompetensi.",
-      href: "/services/business-training", // Link to dedicated page
-      id: "business-training",
+      href: "/services/sales-revolution", // Link to dedicated page
+      id: "sales-revolution",
     },
     {
       icon: <Target style={{ color: "#02A345" }} size={48} />,

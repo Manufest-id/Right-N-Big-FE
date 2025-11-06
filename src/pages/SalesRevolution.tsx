@@ -15,7 +15,7 @@ import {
 import * as React from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 
-const BusinessTraining = () => {
+const SalesRevolution = () => {
   type Program = {
     id: string;
     title: string;
@@ -252,10 +252,10 @@ const BusinessTraining = () => {
             <span>Kembali ke Layanan</span>
           </Link>
 
-          {/* Hero Section for Business Training */}
+          {/* Hero Section for Sales Revolution */}
           <div className="text-center mb-16">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              BUSINESS <span style={{ color: "#02A345" }}>TRAINING</span>
+              Sales <span style={{ color: "#02A345" }}>REVOLUTION</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Pelatihan bisnis dengan topik manajemen, kepemimpinan, pemasaran,
@@ -267,7 +267,7 @@ const BusinessTraining = () => {
             <div className="mt-8">
               <img
                 src="/images/training/business-training-hero.png"
-                alt="Business Training Overview"
+                alt="Sales Revolution Overview"
                 className="w-full max-w-4xl mx-auto rounded-2xl shadow-lg object-cover h-64"
               />
             </div>
@@ -475,4 +475,4 @@ const BusinessTraining = () => {
   );
 };
 
-export default BusinessTraining;
+export default SalesRevolution;

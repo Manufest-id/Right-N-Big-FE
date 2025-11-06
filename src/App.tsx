@@ -8,12 +8,12 @@ import Team from "./pages/Team";
 import News from "./pages/News";
 import NewsDetail from "./pages/NewsDetail";
 import Contact from "./pages/Contact";
-import BusinessTraining from "./pages/BusinessTraining";
 import BusinessCoaching from "./pages/BusinessCoaching";
 import BusinessConsulting from "./pages/BusinessConsulting";
 import SMEEmpowerment from "./pages/SMEEmpowerment";
 import PersonalMapping from "./pages/PersonalMapping";
 import ManagementServices from "./pages/ManagementServices";
+import SalesRevolution from "./pages/SalesRevolution";
 
 function App() {
   return (
@@ -25,8 +25,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route
-            path="/services/business-training"
-            element={<BusinessTraining />}
+            path="/services/sales-revolution"
+            element={<SalesRevolution />}
           />
           <Route
             path="/services/business-coaching"

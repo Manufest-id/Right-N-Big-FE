@@ -1,120 +1,17 @@
 import { Linkedin, Mail, Phone } from "lucide-react";
 import ScrollToTop from "@/components/ScrollToTop";
 
+import teamData from "../data/team.json";
+
+type TeamMember = {
+  name: string;
+  position: string;
+  image: string;
+  description: string[];
+};
+
 const Team = () => {
-  const teamMembers = [
-    {
-      name: "Tony Chen",
-      position: "CEO & Founder",
-      image: "/images/team/tony-chen.png",
-      description: [
-        "CEO & Founder Right n Big Coaching & Consultant",
-        "Sales Lead Consultant & Senior Trainer QQ Group",
-        "Master Trainer – Business Coach & Consultant",
-        "Master in Global Business: Operations Management",
-        "Sales & Communication Specialist",
-        "UMKM Expert",
-      ],
-    },
-    {
-      name: "Julian Foe, M.Pd",
-      position: "Senior Director & Leadership Expert",
-      image: "/images/team/julian-foe.png",
-      description: [
-        "Former Senior Director – Asia Pacific Retail Institute",
-        "Country Director – Global Leadership Summit – Indonesia",
-        "Founding Member – Master's Hand Foundation",
-        "HR Advisor – various national & multinational company",
-        "National & International Speaker: Leadership Topic",
-        "Master in Education: Educational Technology",
-        "Senior Consultant, Trainer",
-      ],
-    },
-    {
-      name: "Fransisca Diwanti, SH., MM., CCP.",
-      position: "Commissioner & Education Leader",
-      image: "/images/team/fransisca-diwanti.png",
-      description: [
-        "Komisaris – PT Theralife Esensia Indonesia",
-        "Wakil Rektor III – Universitas Mahakarya Asia",
-        "Dosen – STIEBBANK Yogyakarta",
-        "Wakil Ketua II – STIEBBANK Yogyakarta",
-        "Direktur – Akademi Pariwisata Buana Wisata Yogyakarta",
-        "Ketua Dewan Pembina – Asosiasi Manjemen Indonesia BPC DIY",
-        "Pengurus – KADIN DIY Bidang Humas",
-        "Owner – De Kayon Rasa Resto",
-        "President – Lions Club Yogyakarta",
-      ],
-    },
-    {
-      name: "Dr. Helena Rahayu (Yayuk)",
-      position: "Medical Doctor & Sales Marketing Expert",
-      image: "/images/team/helena-rahayu.png",
-      description: [
-        "Medical Doctor",
-        "30+ years experience as Sales Marketing Expert in MNC's (Pfizer, GSK, Wyeth, Abbott, etc.)",
-        "Trainer, Life Coach and Licensed Practitioner NLP",
-        "Senior Facilitator of MarkPlus Indonesia by Herman Kartajaya",
-      ],
-    },
-    {
-      name: "Amanda Setiadi, BSc",
-      position: "Accounting & Finance Manager",
-      image: "/images/team/amanda-setiadi.png",
-      description: [
-        "Accounting & Finance – Manager Auditor",
-        "Senior Audit Consultant – Big 4 Accounting Firm, Ernst & Young Indonesia",
-        "Audit Advisor & Manager at Brandmarkable Consulting Management",
-        "Experience at Periplus, Escorindo Forwarding, Astro TV",
-      ],
-    },
-    {
-      name: "Yosephine D.M.W.",
-      position: "Environmental Management Consultant",
-      image: "/images/team/yosephine-dmw.png",
-      description: [
-        "Anggota Komite Teknis 13-07 – Manajemen Lingkungan dan Ekolabel, Pusta",
-        "Tim Founder – Asosiasi Profesi LCA & Sustainability ProLCAS",
-        "Konsultan & Trainer – Sistem Manajemen Lingkungan, Mutu, K3, Ekolabel, LCA, RECP, Green Chemistry",
-        "25+ tahun pengalaman di PT. Sucofindo dan PT. SGS Indonesia",
-      ],
-    },
-    {
-      name: "Ir. Ruddy Handoko",
-      position: "Insurance & Risk Management Consultant",
-      image: "/images/team/ruddy-handoko.png",
-      description: [
-        "Insurance Consultant & Specialist (General, Health, Life)",
-        "Risk Management Consultant",
-        "Agribusiness Consultant",
-      ],
-    },
-    {
-      name: "Andreas Gatot Broto, SE., M.Si., Ak, CA",
-      position: "Registered Accountant & Business Consultant",
-      image: "/images/team/andreas-gatot.png",
-      description: [
-        "Registered Accountant: RNA.9405 / AK",
-        "Chartered Accountant: 11.D19510 / CA",
-        "Master: Management Accounting at Diponegoro University",
-        "Consulting in Operations, Finance / Accounting and Tax Management",
-        "Controller at PT Nagita Trans Utama",
-        "Lecturer at Faculty of Economics and Business [Sebelas Maret University]",
-      ],
-    },
-    {
-      name: "Dimas Rizki",
-      position: "Senior Creative & Digital Marketing",
-      image: "/images/team/dimas-rizki.png",
-      description: [
-        "Senior Tim Creative at Right n Big Coaching & Consulting",
-        "Content Creator Trainer & Consultant",
-        "Professional Photographer & Videographer",
-        "Digital Marketing Consultant",
-        "Social Media Specialist",
-      ],
-    },
-  ];
+  const teamMembers = teamData as TeamMember[];
 
   const handleHubungiKami = () => {
     const whatsappUrl = "https://wa.me/6281234567890";
@@ -174,18 +71,18 @@ const Team = () => {
                     {member.position}
                   </p>
                   <div className="mt-4 space-y-3">
-                  {member.description.map((point, idx) => (
-                    <div key={idx} className="flex items-start">
-                      <div 
-                        className="w-1 h-full min-h-6 rounded-full mr-3 mt-1 flex-shrink-0"
-                        style={{ backgroundColor: "#02A345" }}
-                      ></div>
-                      <p className="text-gray-600 text-sm leading-relaxed">
-                        {point}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                    {member.description.map((point, idx) => (
+                      <div key={idx} className="flex items-start">
+                        <div
+                          className="w-1 h-full min-h-6 rounded-full mr-3 mt-1 flex-shrink-0"
+                          style={{ backgroundColor: "#02A345" }}
+                        ></div>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          {point}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}

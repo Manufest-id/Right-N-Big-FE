@@ -20,7 +20,7 @@ const Header = () => {
   ];
 
   const serviceItems = [
-    { name: "Business Training", href: "/services/business-training" },
+    { name: "Sales Revolution", href: "/services/sales-revolution" },
     { name: "Business Coaching", href: "/services/business-coaching" },
     { name: "SME Empowerment", href: "/services/sme-empowerment" },
     { name: "Personal Mapping", href: "/services/personal-mapping" },

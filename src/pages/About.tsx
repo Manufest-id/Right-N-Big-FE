@@ -286,9 +286,6 @@ const About = () => {
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Mengapa Memilih Kami?
             </h3>
-            <p className="text-xl text-gray-600">
-              Keunggulan yang membuat kami berbeda
-            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -344,43 +341,13 @@ const About = () => {
               </div>
               <div
                 className={
-                  currentPorto == "government"
+                  currentPorto == "creative"
                     ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
                     : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
                 }
-                onClick={() => handlePorto("government")}
+                onClick={() => handlePorto("creative")}
               >
-                Government
-              </div>
-              <div
-                className={
-                  currentPorto == "it"
-                    ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
-                    : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
-                }
-                onClick={() => handlePorto("it")}
-              >
-                IT & Technology
-              </div>
-              <div
-                className={
-                  currentPorto == "fnb"
-                    ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
-                    : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
-                }
-                onClick={() => handlePorto("fnb")}
-              >
-                Food & Beverage
-              </div>
-              <div
-                className={
-                  currentPorto == "distribution"
-                    ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
-                    : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
-                }
-                onClick={() => handlePorto("distribution")}
-              >
-                Trading & Distribution
+                Creative
               </div>
               <div
                 className={
@@ -394,6 +361,36 @@ const About = () => {
               </div>
               <div
                 className={
+                  currentPorto == "fnb"
+                    ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
+                    : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
+                }
+                onClick={() => handlePorto("fnb")}
+              >
+                Food & Beverage
+              </div>
+              <div
+                className={
+                  currentPorto == "government"
+                    ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
+                    : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
+                }
+                onClick={() => handlePorto("government")}
+              >
+                Government
+              </div>
+              <div
+                className={
+                  currentPorto == "hospital"
+                    ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
+                    : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
+                }
+                onClick={() => handlePorto("hospital")}
+              >
+                Hospital
+              </div>
+              <div
+                className={
                   currentPorto == "insurance"
                     ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
                     : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
@@ -401,6 +398,16 @@ const About = () => {
                 onClick={() => handlePorto("insurance")}
               >
                 Insurance
+              </div>
+              <div
+                className={
+                  currentPorto == "it"
+                    ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
+                    : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
+                }
+                onClick={() => handlePorto("it")}
+              >
+                IT & Technology
               </div>
               <div
                 className={
@@ -414,23 +421,13 @@ const About = () => {
               </div>
               <div
                 className={
-                  currentPorto == "creative"
+                  currentPorto == "distribution"
                     ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
                     : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
                 }
-                onClick={() => handlePorto("creative")}
+                onClick={() => handlePorto("distribution")}
               >
-                Creative
-              </div>
-              <div
-                className={
-                  currentPorto == "hospital"
-                    ? "font-medium rounded-xl bg-green-600 text-white px-4 py-2 transition duration-200 cursor-pointer"
-                    : "font-medium rounded-xl hover:bg-green-600 hover:text-white px-4 py-2 transition duration-200 cursor-pointer"
-                }
-                onClick={() => handlePorto("hospital")}
-              >
-                Hospital
+                Trading & Distribution
               </div>
             </div>
 

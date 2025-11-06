@@ -29,7 +29,7 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission - integrate with WhatsApp or email service
-    const whatsappMessage = `Halo RightNBig, saya ${formData.name} dari ${formData.company}. Saya tertarik dengan layanan ${formData.service}. ${formData.message}`;
+    const whatsappMessage = `Halo Right And Big, saya ${formData.name} dari ${formData.company}. Saya tertarik dengan layanan ${formData.service}. ${formData.message}`;
     const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(
       whatsappMessage
     )}`;

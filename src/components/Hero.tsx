@@ -27,7 +27,7 @@ const Hero = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const whatsappMessage = `Halo RightNBig, saya ${formData.name}. Email: ${formData.email}, Phone: ${formData.phone}. Saya ingin konsultasi mengenai bisnis saya.`;
+    const whatsappMessage = `Halo Right And Big, saya ${formData.name}. Email: ${formData.email}, Phone: ${formData.phone}. Saya ingin konsultasi mengenai bisnis saya.`;
     const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(
       whatsappMessage
     )}`;
@@ -90,7 +90,7 @@ const Hero = () => {
           <div className="relative flex justify-center lg:ml-60 mt-8 lg:mt-0">
             <img
               src="/images/tony.png"
-              alt="Tony Chen - Founder & CEO RightNBig"
+              alt="Tony Chen - Founder & CEO Right And Big"
               className="w-3/4 max-w-xs sm:max-w-sm md:max-w-md h-auto object-contain"
             />
           </div>

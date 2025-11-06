@@ -37,8 +37,12 @@ const News = () => {
       <section id="news" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Berita & Artikel</h2>
-            <p className="text-xl text-gray-600">Tidak ada berita untuk ditampilkan saat ini.</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Berita & Artikel
+            </h2>
+            <p className="text-xl text-gray-600">
+              Tidak ada berita untuk ditampilkan saat ini.
+            </p>
           </div>
         </div>
       </section>
@@ -49,8 +53,13 @@ const News = () => {
     <section id="news" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Berita & Artikel</h2>
-          <p className="text-xl text-gray-600">Ikuti perkembangan terbaru, insight, dan cerita sukses dari RightNBig</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            Berita & Artikel
+          </h2>
+          <p className="text-xl text-gray-600">
+            Ikuti perkembangan terbaru, insight, dan cerita sukses dari Right
+            and Big
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -79,7 +88,9 @@ const News = () => {
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 hover:text-green-600 transition-colors">
                   {newsItems[0].title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-6 text-lg">{newsItems[0].excerpt}</p>
+                <p className="text-gray-600 leading-relaxed mb-6 text-lg">
+                  {newsItems[0].excerpt}
+                </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4 text-sm text-gray-500">
                     <div className="flex items-center space-x-2">
@@ -148,7 +159,11 @@ const News = () => {
               to={`/news/${item.id}`}
               className="block bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              <img src={item.image || "/placeholder.svg"} alt={item.title} className="w-full h-48 object-cover" />
+              <img
+                src={item.image || "/placeholder.svg"}
+                alt={item.title}
+                className="w-full h-48 object-cover"
+              />
               <div className="p-6">
                 <div className="mb-3">
                   <span
@@ -161,13 +176,18 @@ const News = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-green-600 transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-4">{item.excerpt}</p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  {item.excerpt}
+                </p>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2 text-sm text-gray-500">
                     <Calendar size={14} />
                     <span>{item.date}</span>
                   </div>
-                  <div className="font-semibold hover:opacity-80 transition-colors" style={{ color: "#02A345" }}>
+                  <div
+                    className="font-semibold hover:opacity-80 transition-colors"
+                    style={{ color: "#02A345" }}
+                  >
                     Baca →
                   </div>
                 </div>

@@ -69,18 +69,18 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/services"
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Layanan
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/about"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Tentang Kami
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Layanan
                 </Link>
               </li>
               <li>
@@ -220,8 +220,8 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2024 RightNBig. All rights reserved. | Privacy Policy | Terms of
-              Service
+              © 2024 Right And Big. All rights reserved. | Privacy Policy |
+              Terms of Service
             </div>
             <button
               onClick={scrollToTop}

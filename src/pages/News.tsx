@@ -54,8 +54,8 @@ const News = () => {
               Berita & Artikel
             </h1>
             <p className="text-xl text-gray-600">
-              Ikuti perkembangan terbaru, insight, dan cerita sukses dari
-              RightNBig
+              Ikuti perkembangan terbaru, insight, dan cerita sukses dari Right
+              and Big
             </p>
           </div>
 
