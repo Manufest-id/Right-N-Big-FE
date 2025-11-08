@@ -1,15 +1,47 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft, Users, Clock, Dot } from "lucide-react";
+import type { ReactNode } from "react";
 import ScrollToTop from "@/components/ScrollToTop";
 
+type Detail = { label: string; value: string; icon: ReactNode };
+type Bullet = { name: string; icon: ReactNode };
+
+const splitAndHighlight = (text: string) => {
+  // Split on em-dash or regular hyphen surrounded by spaces
+  const parts = text.split(" — ") || text.split(" - ");
+
+  if (parts.length >= 2) {
+    const [prefix, ...rest] = parts;
+    return (
+      <>
+        <span className="font-semibold text-gray-900">{prefix}</span>
+        <span> — {rest.join(" — ")}</span>
+      </>
+    );
+  }
+  return <>{text}</>;
+};
+
 const SMEEmpowerment = () => {
-  const programs = [
+  const programs: Array<{
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    image2?: string; // second image (UMKM Intensive)
+    details?: Detail[];
+    topics?: Bullet[]; // UMKM Intensive topics
+    module?: Bullet[]; // UMKM Intensive methods
+    benefits?: Bullet[]; // Mentor benefits
+    diagramChips?: string[]; // Mentor diagram points
+  }> = [
     {
       id: "umkm-intensive",
       title: "UMKM INTENSIVE TRAINING & COACHING",
       description:
         "Pelatihan bagi para pelaku UMKM menuju UMKM Naik Kelas dengan sebuah kombinasi program pelatihan dan pendampingan bisnis yang terarah dan terukur.",
-      image: "/images/sme/umkm-intensive.jpg",
+      image: "/images/sme/umkm-intensive-1.png",
+      image2: "/images/sme/umkm-intensive-2.png",
       details: [
         {
           label: "Peserta",
@@ -28,45 +60,74 @@ const SMEEmpowerment = () => {
           icon: <Clock size={20} style={{ color: "#02A345" }} />,
         },
       ],
+      topics: [
+        {
+          name: "Produk & Jasa — Solusi apa yang ditawarkan kepada pelanggan",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Bisnis Model — Bagaimana bisnis dijalankan sampai menghasilkan profit",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Bisnis Proses — Proses apa saja yang perlu dijalankan",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Manajemen Keuangan — Skema biaya, skema harga, hingga laporan keuangan",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Pemasaran & CRM — Eksistensi di pasar dan pengelolaan CRM",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Penjualan & Saluran Distribusi — Menentukan channel dan mendorong transaksi",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Strategi Pengembangan Bisnis — Menjaga kestabilan omzet & melindungi pelanggan dari kompetitor",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+      ],
       module: [
         {
-          name: "Hybrid",
+          name: "Hybrid — Metode fleksibel menyesuaikan kebutuhan mentee",
           icon: <Dot size={24} style={{ color: "#02A345" }} />,
         },
         {
-          name: "Ilmu terapan yang sangat aplikatif (70% Hard Skills)",
+          name: "Mentoring one-on-one melalui WA/Telegram/ZOOM (limited) selama durasi pembelajaran",
           icon: <Dot size={24} style={{ color: "#02A345" }} />,
         },
         {
-          name: "Selalu ada penugasan di setiap sesi terkait materi (Google Drive)",
+          name: "Ilmu Terapan — Aplikatif (70% Hard Skills)",
           icon: <Dot size={24} style={{ color: "#02A345" }} />,
         },
         {
-          name: "Proses mentoring one on one melalui WA/Telegram/Zoom selama durasi pembelajaran (limited)",
+          name: "Journal & KPI personal (mingguan & global)",
           icon: <Dot size={24} style={{ color: "#02A345" }} />,
         },
         {
-          name: "Journal dan KPI personal (mingguan & global)",
+          name: "Penugasan di setiap sesi sesuai materi",
           icon: <Dot size={24} style={{ color: "#02A345" }} />,
         },
         {
-          name: "Program pelatihan selama 16 minggu tetapi pendampingan akan terus dilayani",
+          name: "Pendampingan intensif selama masa training & coaching",
           icon: <Dot size={24} style={{ color: "#02A345" }} />,
         },
       ],
     },
     {
       id: "mentor-umkm",
-      title:
-        "MENTOR: UMKM TRAINING MODUL, PEMETAAN BISNIS, MENTORING EFFECTIVE, IDENTIFIKASI MASALAH & SOLUSI",
+      title: "MENTOR UMKM TRAINING & COACHING",
       description:
-        "Sebuah pelatihan yang ditujukan bagi pelaku usaha UMKM yang sudah naik kelas dan memiliki kerinduan untuk menjadi penolong sebagai mentor bagi pelaku-pelaku UMKM lainnya agar semakin banyak UMKM yang naik kelas.",
+        "Pelatihan bagi pelaku UMKM yang sudah naik kelas dan ingin menjadi mentor bagi pelaku UMKM lainnya agar semakin banyak UMKM yang naik kelas.",
       image: "/images/sme/mentor-umkm2.jfif",
       details: [
         {
           label: "Peserta",
           value:
-            "Para pelaku UMKM yang sudah naik kelas dan lolos uji kelayakan sebagai pelaku UMKM yang layak menjadi mentor UMKM di kemudian hari",
+            "Pelaku UMKM yang sudah naik kelas dan lolos uji kelayakan untuk menjadi mentor UMKM",
           icon: <Users size={20} style={{ color: "#02A345" }} />,
         },
         {
@@ -75,16 +136,36 @@ const SMEEmpowerment = () => {
           icon: <Clock size={20} style={{ color: "#02A345" }} />,
         },
       ],
-      module: [],
+      benefits: [
+        {
+          name: "Bisnis/pekerjaan di-mentoring & di-coaching langsung oleh Master Trainer dengan investasi kecil",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Kesempatan melayani sebagai mentor & pendamping bisnis di Marketplace",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+        {
+          name: "Kesempatan belajar dan berkarier sebagai Konsultan & Trainer",
+          icon: <Dot size={24} style={{ color: "#02A345" }} />,
+        },
+      ],
+      diagramChips: [
+        "UMKM TRAINING MODUL",
+        "PEMETAAN BISNIS",
+        "MENTORING YANG EFEKTIF",
+        "IDENTIFIKASI MASALAH & SOLUSI",
+      ],
     },
   ];
 
   return (
     <div className="pt-32">
       <ScrollToTop />
+
+      {/* HERO */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          {/* Back Button */}
           <Link
             to="/services"
             className="inline-flex items-center space-x-2 text-gray-600 hover:text-green-600 mb-12 transition-colors"
@@ -93,7 +174,6 @@ const SMEEmpowerment = () => {
             <span>Kembali ke Layanan</span>
           </Link>
 
-          {/* Hero Section for SME Empowerment */}
           <div className="text-center mb-16">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               SME <span style={{ color: "#02A345" }}>EMPOWERMENT</span>
@@ -113,14 +193,15 @@ const SMEEmpowerment = () => {
             </div>
           </div>
 
-          {/* Individual Program Sections */}
+          {/* PROGRAM CARDS */}
           {programs.map((program) => (
             <div
               key={program.id}
               id={program.id}
               className="bg-white rounded-3xl shadow-xl p-8 lg:p-12 mb-16"
             >
-              <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div className="grid lg:grid-cols-2 gap-8 items-start">
+                {/* Left: text */}
                 <div className="order-2 lg:order-1 space-y-6">
                   <h2 className="text-4xl font-bold text-gray-900">
                     {program.title}
@@ -129,6 +210,7 @@ const SMEEmpowerment = () => {
                     {program.description}
                   </p>
 
+                  {/* Details */}
                   {program.details && (
                     <div className="space-y-3">
                       {program.details.map((detail, idx) => (
@@ -148,36 +230,105 @@ const SMEEmpowerment = () => {
                     </div>
                   )}
 
-                  {program.module && (
-                    <div className="space-y-3">
-                      <h1 className="text-2xl font-bold text-gray-700 mt-10">
-                        Metode Pelatihan dan Pendampingan:
-                      </h1>
-                      {program.module.map((module, idx) => (
+                  {/* Topics (UMKM Intensive) */}
+                  {program.topics && (
+                    <div className="space-y-3 pt-4">
+                      <h3 className="text-2xl font-bold text-gray-700">
+                        Topik Utama:
+                      </h3>
+                      {program.topics.map((t, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center space-x-3 text-gray-700"
+                          className="flex items-start space-x-3 text-gray-700"
                         >
-                          {module.icon}
-                          <span>
-                            <span>{module.name}</span>{" "}
-                          </span>
+                          {t.icon}
+                          <span>{splitAndHighlight(t.name)}</span>
                         </div>
                       ))}
                     </div>
                   )}
+
+                  {/* Methods (UMKM Intensive) */}
+                  {program.module && (
+                    <div className="space-y-3 pt-6">
+                      <h3 className="text-2xl font-bold text-gray-700">
+                        Metode Pelatihan & Pendampingan:
+                      </h3>
+                      {program.module.map((m, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-start space-x-3 text-gray-700"
+                        >
+                          {m.icon}
+                          <span>{splitAndHighlight(m.name)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Benefits (Mentor UMKM) */}
+                  {program.benefits && (
+                    <div className="space-y-3 pt-4">
+                      <h3 className="text-2xl font-bold text-gray-700">
+                        Keuntungan Program:
+                      </h3>
+                      {program.benefits.map((b, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-start space-x-3 text-gray-700"
+                        >
+                          {b.icon}
+                          <span>{b.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Diagram chips (Mentor UMKM) */}
+                  {program.diagramChips && (
+                    <div className="pt-6">
+                      <div className="flex flex-wrap gap-3">
+                        {program.diagramChips.map((chip, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1.5 rounded-full text-sm font-semibold text-white"
+                            style={{
+                              backgroundColor: [
+                                "#0EA5E9", // blue
+                                "#84CC16", // olive/green
+                                "#0F766E", // teal/dark
+                                "#7C3AED", // violet/alt
+                              ][i % 4],
+                            }}
+                          >
+                            {chip}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
-                <div className="order-1 lg:order-2">
+
+                {/* Right: images */}
+                <div className="order-1 lg:order-2 space-y-5">
                   <img
                     src={program.image || "/placeholder.svg"}
                     alt={program.title}
-                    className="w-full h-72 object-cover rounded-2xl shadow-md"
+                    className="w-full h-[480px] object-cover rounded-2xl shadow-md"
                   />
+                  {program.image2 && (
+                    <img
+                      src={program.image2}
+                      alt={`${program.title} – additional`}
+                      className="w-full h-[480px] object-cover rounded-2xl shadow-md"
+                    />
+                  )}
                 </div>
               </div>
             </div>
           ))}
 
+          {/* CTA */}
           <div className="text-center mt-12">
             <p className="text-2xl font-bold text-gray-900 mb-6">
               Bersifat Umum Untuk Siapapun, Waktu Pengerjaan Dibebaskan

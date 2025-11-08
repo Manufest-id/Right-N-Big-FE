@@ -1,7 +1,7 @@
 [
   {
     "name": "Tony Chen",
-    "position": "CEO & Founder",
+    "position": "Master Trainer & Business Coach",
     "image": "/images/team/tony-chen.png",
     "description": [
       "CEO & Founder Right n Big Coaching & Consultant",
@@ -14,7 +14,7 @@
   },
   {
     "name": "Julian Foe, M.Pd",
-    "position": "Senior Director & Leadership Expert",
+    "position": "HR Advisor & Leadership Coach",
     "image": "/images/team/julian-foe.png",
     "description": [
       "Former Senior Director – Asia Pacific Retail Institute",
@@ -27,9 +27,72 @@
     ]
   },
   {
-    "name": "Fransisca Diwanti, SH., MM., CCP.",
-    "position": "Commissioner & Education Leader",
-    "image": "/images/team/fransisca-diwanti.png",
+    "name": "dr. Helena R.",
+    "position": "Trainer & Marketing Consultant",
+    "image": "/images/team/helena-rahayu.png",
+    "description": [
+      "Medical Doctor",
+      "30+ years experience as Sales Marketing Expert in MNC's (Pfizer, GSK, Wyeth, Abbott, etc.)",
+      "Trainer, Life Coach and Licensed Practitioner NLP",
+      "Senior Facilitator of MarkPlus Indonesia by Herman Kartajaya"
+    ]
+  },
+  {
+    "name": "Andreas G.",
+    "position": "Accountant & Tax Consultant",
+    "image": "/images/team/andreas-gatot.png",
+    "description": [
+      "Registered Accountant: RNA.9405 / AK",
+      "Chartered Accountant: 11.D19510 / CA",
+      "Master: Management Accounting at Diponegoro University",
+      "Consulting in Operations, Finance / Accounting and Tax Management",
+      "Controller at PT Nagita Trans Utama",
+      "Lecturer at Faculty of Economics and Business [Sebelas Maret University]"
+    ]
+  },
+  {
+    "name": "Ruddy H.",
+    "position": "Insurance & Risk Management",
+    "image": "/images/team/ruddy-handoko.png",
+    "description": [
+      "Insurance Consultant & Specialist (General, Health, Life)",
+      "Risk Management Consultant",
+      "Agribusiness Consultant"
+    ]
+  },
+  {
+    "name": "Amanda S.",
+    "position": "Finance Consultant",
+    "image": "/images/team/amanda-setiadi.png",
+    "description": [
+      "Accounting & Finance – Manager Auditor",
+      "Senior Audit Consultant – Big 4 Accounting Firm, Ernst & Young Indonesia",
+      "Audit Advisor & Manager at Brandmarkable Consulting Management",
+      "Experience at Periplus, Escorindo Forwarding, Astro TV"
+    ]
+  },
+  {
+    "name": "Albert G.",
+    "position": "Personal Development Life Coach & Counselor",
+    "image": "/images/team/albert-g.png",
+    "description": []
+  },
+  {
+    "name": "Timmy T.",
+    "position": "AI Specialist, Trainer, IT & Digital Consultant",
+    "image": "/images/team/timmy-t.png",
+    "description": []
+  },
+  {
+    "name": "Riana X.",
+    "position": "Strategic Communication & Branding Consultant",
+    "image": "/images/team/riana-x.png",
+    "description": []
+  },
+  {
+    "name": "Fransisca D.",
+    "position": "Management Consultant",
+    "image": "/images/team/fransisca-d.png",
     "description": [
       "Komisaris – PT Theralife Esensia Indonesia",
       "Wakil Rektor III – Universitas Mahakarya Asia",
@@ -43,65 +106,9 @@
     ]
   },
   {
-    "name": "Dr. Helena Rahayu (Yayuk)",
-    "position": "Medical Doctor & Sales Marketing Expert",
-    "image": "/images/team/helena-rahayu.png",
-    "description": [
-      "Medical Doctor",
-      "30+ years experience as Sales Marketing Expert in MNC's (Pfizer, GSK, Wyeth, Abbott, etc.)",
-      "Trainer, Life Coach and Licensed Practitioner NLP",
-      "Senior Facilitator of MarkPlus Indonesia by Herman Kartajaya"
-    ]
-  },
-  {
-    "name": "Amanda Setiadi, BSc",
-    "position": "Accounting & Finance Manager",
-    "image": "/images/team/amanda-setiadi.png",
-    "description": [
-      "Accounting & Finance – Manager Auditor",
-      "Senior Audit Consultant – Big 4 Accounting Firm, Ernst & Young Indonesia",
-      "Audit Advisor & Manager at Brandmarkable Consulting Management",
-      "Experience at Periplus, Escorindo Forwarding, Astro TV"
-    ]
-  },
-  {
-    "name": "Yosephine D.M.W.",
-    "position": "Environmental Management Consultant",
-    "image": "/images/team/yosephine-dmw.png",
-    "description": [
-      "Anggota Komite Teknis 13-07 – Manajemen Lingkungan dan Ekolabel, Pusta",
-      "Tim Founder – Asosiasi Profesi LCA & Sustainability ProLCAS",
-      "Konsultan & Trainer – Sistem Manajemen Lingkungan, Mutu, K3, Ekolabel, LCA, RECP, Green Chemistry",
-      "25+ tahun pengalaman di PT. Sucofindo dan PT. SGS Indonesia"
-    ]
-  },
-  {
-    "name": "Ir. Ruddy Handoko",
-    "position": "Insurance & Risk Management Consultant",
-    "image": "/images/team/ruddy-handoko.png",
-    "description": [
-      "Insurance Consultant & Specialist (General, Health, Life)",
-      "Risk Management Consultant",
-      "Agribusiness Consultant"
-    ]
-  },
-  {
-    "name": "Andreas Gatot Broto, SE., M.Si., Ak, CA",
-    "position": "Registered Accountant & Business Consultant",
-    "image": "/images/team/andreas-gatot.png",
-    "description": [
-      "Registered Accountant: RNA.9405 / AK",
-      "Chartered Accountant: 11.D19510 / CA",
-      "Master: Management Accounting at Diponegoro University",
-      "Consulting in Operations, Finance / Accounting and Tax Management",
-      "Controller at PT Nagita Trans Utama",
-      "Lecturer at Faculty of Economics and Business [Sebelas Maret University]"
-    ]
-  },
-  {
-    "name": "Dimas Rizki",
+    "name": "Rizki",
     "position": "Senior Creative & Digital Marketing",
-    "image": "/images/team/dimas-rizki.png",
+    "image": "/images/team/rizki.png",
     "description": [
       "Senior Tim Creative at Right n Big Coaching & Consulting",
       "Content Creator Trainer & Consultant",
@@ -109,5 +116,11 @@
       "Digital Marketing Consultant",
       "Social Media Specialist"
     ]
+  },
+  {
+    "name": "Jesslyn T.K.",
+    "position": "Public Relations",
+    "image": "/images/team/jesslyn-tk.png",
+    "description": []
   }
 ]
